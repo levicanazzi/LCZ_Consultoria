@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LCZ.Domain\LCZ.Domain.csproj" />
+    <ProjectReference Include="..\LCZ.Infra\LCZ.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

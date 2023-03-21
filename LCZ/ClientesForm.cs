@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LCZ.Domain.Interfaces.IApplication;
+using LCZ.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,47 +14,23 @@ namespace LCZ
 {
     public partial class ClientesForm : Form
     {
-        public ClientesForm()
+        IClienteAppService _clienteAppService;
+        public ClientesForm(IClienteAppService clienteAppService)
         {
+            _clienteAppService = clienteAppService;
             InitializeComponent();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
+            _clienteAppService.Insert(new Cliente()
+            {
+                Name = "Ulisses",
+                CpfCnpj = "4685469"
+            });
         }
 
         private void ClientesForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox25_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
