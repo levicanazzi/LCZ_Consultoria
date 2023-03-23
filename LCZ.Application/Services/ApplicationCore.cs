@@ -19,6 +19,7 @@ namespace LCZ.Application.Services
         public void Delete(T entity)
         {
             this.Delete(entity);
+
         }
 
         public T Get(int id)

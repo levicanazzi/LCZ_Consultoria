@@ -16,11 +16,11 @@ namespace LCZ.Application.Services
             {
                 throw new Exception("Cliente vazio.");
             }
-            else if (entity.Name.Length <= 10)
+            else if (entity.NomeFantasia.Length <= 5)
             {
                 throw new Exception("O nome do cliente tem que ter mais de dez caracteres.");
             }
-            else if (ValidaCpfCnpj(entity.CpfCnpj) == false)
+            else if (ValidaCpfCnpj(entity.Cnpj) == false)
             {
                 throw new Exception("O nome do cliente tem que ter mais de dez caracteres");
             }
@@ -28,7 +28,7 @@ namespace LCZ.Application.Services
             //this.Insert(entity);
         }
 
-        private bool ValidaCpfCnpj(string? cpfCnpj)
+        private bool ValidaCpfCnpj(string Cnpj)
         {
             return true;
         }

@@ -34,6 +34,8 @@ namespace LCZ
 
                 services.AddTransient<IClienteRepository, ClienteRepository>();
                 services.AddTransient<IClienteAppService, ClienteAppService>();
+                services.AddTransient<IContatoClienteRepository, ContatoClienteRepository>();
+                services.AddTransient<IContatoClienteAppService, ContatoClienteAppService>();
                 services.AddTransient<ClientesForm>();
             });
 

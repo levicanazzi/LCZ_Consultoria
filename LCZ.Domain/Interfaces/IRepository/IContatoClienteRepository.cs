@@ -2,8 +2,7 @@
 
 namespace LCZ.Domain.Interfaces.IRepository
 {
-    public interface IClienteRepository : IRepository<Cliente>
+    public interface IContatoClienteRepository : IRepository<ContatoCliente>
     {
-       
     }
 }

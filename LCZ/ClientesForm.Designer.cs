@@ -47,51 +47,54 @@
             label14 = new Label();
             label15 = new Label();
             comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
+            TxtSite = new TextBox();
+            TxtTelefone = new TextBox();
+            TxtRamoAtuacao = new TextBox();
+            TxtCnpj = new TextBox();
+            TxtRazaoSocial = new TextBox();
+            TxtNomeFantasia = new TextBox();
+            TxtInscricaoEstadual = new TextBox();
+            TxtDataFundacao = new TextBox();
+            TxtCep = new TextBox();
+            TxtEndereco = new TextBox();
+            TxtNumero = new TextBox();
+            TxtComplemento = new TextBox();
+            TxtCidade = new TextBox();
+            TxtUf = new TextBox();
             label16 = new Label();
             comboBox2 = new ComboBox();
             label17 = new Label();
-            textBox15 = new TextBox();
+            TxtNome = new TextBox();
             label18 = new Label();
-            textBox16 = new TextBox();
+            TxtCargo = new TextBox();
             label19 = new Label();
-            comboBox3 = new ComboBox();
+            TxtSexo = new ComboBox();
             label20 = new Label();
-            textBox17 = new TextBox();
+            TxtAniversario = new TextBox();
             label21 = new Label();
-            textBox18 = new TextBox();
+            TxtDepartamento = new TextBox();
             label22 = new Label();
-            textBox19 = new TextBox();
+            TxtCelular1 = new TextBox();
             label23 = new Label();
-            textBox20 = new TextBox();
+            TxtCelular2 = new TextBox();
             label24 = new Label();
-            textBox21 = new TextBox();
+            TxtWhatsapp = new TextBox();
             label25 = new Label();
-            textBox22 = new TextBox();
+            TxtEmail = new TextBox();
             label26 = new Label();
-            textBox23 = new TextBox();
+            TxtTipoContato = new TextBox();
             label27 = new Label();
-            textBox24 = new TextBox();
+            TxtResultadoObtido = new TextBox();
             label28 = new Label();
             Contato = new GroupBox();
-            richTextBox1 = new RichTextBox();
+            BtnDeleteContato = new Button();
+            BtnUpContato = new Button();
+            BtnAddContato = new Button();
+            TxtObservacoes = new RichTextBox();
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            BtnCadastrar = new Button();
+            BtnAtualizar = new Button();
+            BtnExcluir = new Button();
             Contato.SuspendLayout();
             SuspendLayout();
             // 
@@ -254,117 +257,117 @@
             comboBox1.Size = new Size(331, 23);
             comboBox1.TabIndex = 30;
             // 
-            // textBox1
+            // TxtSite
             // 
-            textBox1.Location = new Point(421, 68);
-            textBox1.Margin = new Padding(4, 3, 4, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(166, 23);
-            textBox1.TabIndex = 31;
+            TxtSite.Location = new Point(421, 68);
+            TxtSite.Margin = new Padding(4, 3, 4, 3);
+            TxtSite.Name = "TxtSite";
+            TxtSite.Size = new Size(166, 23);
+            TxtSite.TabIndex = 31;
             // 
-            // textBox2
+            // TxtTelefone
             // 
-            textBox2.Location = new Point(621, 68);
-            textBox2.Margin = new Padding(4, 3, 4, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(112, 23);
-            textBox2.TabIndex = 32;
+            TxtTelefone.Location = new Point(621, 68);
+            TxtTelefone.Margin = new Padding(4, 3, 4, 3);
+            TxtTelefone.Name = "TxtTelefone";
+            TxtTelefone.Size = new Size(112, 23);
+            TxtTelefone.TabIndex = 32;
             // 
-            // textBox3
+            // TxtRamoAtuacao
             // 
-            textBox3.Location = new Point(761, 68);
-            textBox3.Margin = new Padding(4, 3, 4, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(122, 23);
-            textBox3.TabIndex = 33;
+            TxtRamoAtuacao.Location = new Point(761, 68);
+            TxtRamoAtuacao.Margin = new Padding(4, 3, 4, 3);
+            TxtRamoAtuacao.Name = "TxtRamoAtuacao";
+            TxtRamoAtuacao.Size = new Size(122, 23);
+            TxtRamoAtuacao.TabIndex = 33;
             // 
-            // textBox4
+            // TxtCnpj
             // 
-            textBox4.Location = new Point(44, 128);
-            textBox4.Margin = new Padding(4, 3, 4, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
-            textBox4.TabIndex = 34;
+            TxtCnpj.Location = new Point(44, 128);
+            TxtCnpj.Margin = new Padding(4, 3, 4, 3);
+            TxtCnpj.Name = "TxtCnpj";
+            TxtCnpj.Size = new Size(125, 23);
+            TxtCnpj.TabIndex = 34;
             // 
-            // textBox5
+            // TxtRazaoSocial
             // 
-            textBox5.Location = new Point(191, 128);
-            textBox5.Margin = new Padding(4, 3, 4, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(184, 23);
-            textBox5.TabIndex = 35;
+            TxtRazaoSocial.Location = new Point(191, 128);
+            TxtRazaoSocial.Margin = new Padding(4, 3, 4, 3);
+            TxtRazaoSocial.Name = "TxtRazaoSocial";
+            TxtRazaoSocial.Size = new Size(184, 23);
+            TxtRazaoSocial.TabIndex = 35;
             // 
-            // textBox6
+            // TxtNomeFantasia
             // 
-            textBox6.Location = new Point(421, 128);
-            textBox6.Margin = new Padding(4, 3, 4, 3);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(166, 23);
-            textBox6.TabIndex = 36;
+            TxtNomeFantasia.Location = new Point(421, 128);
+            TxtNomeFantasia.Margin = new Padding(4, 3, 4, 3);
+            TxtNomeFantasia.Name = "TxtNomeFantasia";
+            TxtNomeFantasia.Size = new Size(166, 23);
+            TxtNomeFantasia.TabIndex = 36;
             // 
-            // textBox7
+            // TxtInscricaoEstadual
             // 
-            textBox7.Location = new Point(621, 128);
-            textBox7.Margin = new Padding(4, 3, 4, 3);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(119, 23);
-            textBox7.TabIndex = 37;
+            TxtInscricaoEstadual.Location = new Point(621, 128);
+            TxtInscricaoEstadual.Margin = new Padding(4, 3, 4, 3);
+            TxtInscricaoEstadual.Name = "TxtInscricaoEstadual";
+            TxtInscricaoEstadual.Size = new Size(119, 23);
+            TxtInscricaoEstadual.TabIndex = 37;
             // 
-            // textBox8
+            // TxtDataFundacao
             // 
-            textBox8.Location = new Point(761, 128);
-            textBox8.Margin = new Padding(4, 3, 4, 3);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(122, 23);
-            textBox8.TabIndex = 38;
+            TxtDataFundacao.Location = new Point(761, 128);
+            TxtDataFundacao.Margin = new Padding(4, 3, 4, 3);
+            TxtDataFundacao.Name = "TxtDataFundacao";
+            TxtDataFundacao.Size = new Size(122, 23);
+            TxtDataFundacao.TabIndex = 38;
             // 
-            // textBox9
+            // TxtCep
             // 
-            textBox9.Location = new Point(44, 189);
-            textBox9.Margin = new Padding(4, 3, 4, 3);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(125, 23);
-            textBox9.TabIndex = 39;
+            TxtCep.Location = new Point(44, 189);
+            TxtCep.Margin = new Padding(4, 3, 4, 3);
+            TxtCep.Name = "TxtCep";
+            TxtCep.Size = new Size(125, 23);
+            TxtCep.TabIndex = 39;
             // 
-            // textBox10
+            // TxtEndereco
             // 
-            textBox10.Location = new Point(191, 189);
-            textBox10.Margin = new Padding(4, 3, 4, 3);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(222, 23);
-            textBox10.TabIndex = 40;
+            TxtEndereco.Location = new Point(191, 189);
+            TxtEndereco.Margin = new Padding(4, 3, 4, 3);
+            TxtEndereco.Name = "TxtEndereco";
+            TxtEndereco.Size = new Size(222, 23);
+            TxtEndereco.TabIndex = 40;
             // 
-            // textBox11
+            // TxtNumero
             // 
-            textBox11.Location = new Point(421, 189);
-            textBox11.Margin = new Padding(4, 3, 4, 3);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(51, 23);
-            textBox11.TabIndex = 41;
+            TxtNumero.Location = new Point(421, 189);
+            TxtNumero.Margin = new Padding(4, 3, 4, 3);
+            TxtNumero.Name = "TxtNumero";
+            TxtNumero.Size = new Size(51, 23);
+            TxtNumero.TabIndex = 41;
             // 
-            // textBox12
+            // TxtComplemento
             // 
-            textBox12.Location = new Point(507, 189);
-            textBox12.Margin = new Padding(4, 3, 4, 3);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(156, 23);
-            textBox12.TabIndex = 42;
+            TxtComplemento.Location = new Point(507, 189);
+            TxtComplemento.Margin = new Padding(4, 3, 4, 3);
+            TxtComplemento.Name = "TxtComplemento";
+            TxtComplemento.Size = new Size(156, 23);
+            TxtComplemento.TabIndex = 42;
             // 
-            // textBox13
+            // TxtCidade
             // 
-            textBox13.Location = new Point(694, 189);
-            textBox13.Margin = new Padding(4, 3, 4, 3);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(128, 23);
-            textBox13.TabIndex = 43;
+            TxtCidade.Location = new Point(694, 189);
+            TxtCidade.Margin = new Padding(4, 3, 4, 3);
+            TxtCidade.Name = "TxtCidade";
+            TxtCidade.Size = new Size(128, 23);
+            TxtCidade.TabIndex = 43;
             // 
-            // textBox14
+            // TxtUf
             // 
-            textBox14.Location = new Point(845, 189);
-            textBox14.Margin = new Padding(4, 3, 4, 3);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(38, 23);
-            textBox14.TabIndex = 44;
+            TxtUf.Location = new Point(845, 189);
+            TxtUf.Margin = new Padding(4, 3, 4, 3);
+            TxtUf.Name = "TxtUf";
+            TxtUf.Size = new Size(38, 23);
+            TxtUf.TabIndex = 44;
             // 
             // label16
             // 
@@ -395,13 +398,13 @@
             label17.TabIndex = 47;
             label17.Text = "Nome:";
             // 
-            // textBox15
+            // TxtNome
             // 
-            textBox15.Location = new Point(233, 271);
-            textBox15.Margin = new Padding(4, 3, 4, 3);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(259, 23);
-            textBox15.TabIndex = 48;
+            TxtNome.Location = new Point(233, 271);
+            TxtNome.Margin = new Padding(4, 3, 4, 3);
+            TxtNome.Name = "TxtNome";
+            TxtNome.Size = new Size(259, 23);
+            TxtNome.TabIndex = 48;
             // 
             // label18
             // 
@@ -413,13 +416,13 @@
             label18.TabIndex = 49;
             label18.Text = "Cargo:";
             // 
-            // textBox16
+            // TxtCargo
             // 
-            textBox16.Location = new Point(507, 271);
-            textBox16.Margin = new Padding(4, 3, 4, 3);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(119, 23);
-            textBox16.TabIndex = 50;
+            TxtCargo.Location = new Point(507, 271);
+            TxtCargo.Margin = new Padding(4, 3, 4, 3);
+            TxtCargo.Name = "TxtCargo";
+            TxtCargo.Size = new Size(119, 23);
+            TxtCargo.TabIndex = 50;
             // 
             // label19
             // 
@@ -431,14 +434,14 @@
             label19.TabIndex = 51;
             label19.Text = "Sexo:";
             // 
-            // comboBox3
+            // TxtSexo
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(643, 270);
-            comboBox3.Margin = new Padding(4, 3, 4, 3);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(97, 23);
-            comboBox3.TabIndex = 52;
+            TxtSexo.FormattingEnabled = true;
+            TxtSexo.Location = new Point(643, 270);
+            TxtSexo.Margin = new Padding(4, 3, 4, 3);
+            TxtSexo.Name = "TxtSexo";
+            TxtSexo.Size = new Size(97, 23);
+            TxtSexo.TabIndex = 52;
             // 
             // label20
             // 
@@ -450,13 +453,13 @@
             label20.TabIndex = 53;
             label20.Text = "Aniversário:";
             // 
-            // textBox17
+            // TxtAniversario
             // 
-            textBox17.Location = new Point(761, 271);
-            textBox17.Margin = new Padding(4, 3, 4, 3);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(122, 23);
-            textBox17.TabIndex = 54;
+            TxtAniversario.Location = new Point(761, 271);
+            TxtAniversario.Margin = new Padding(4, 3, 4, 3);
+            TxtAniversario.Name = "TxtAniversario";
+            TxtAniversario.Size = new Size(122, 23);
+            TxtAniversario.TabIndex = 54;
             // 
             // label21
             // 
@@ -468,13 +471,13 @@
             label21.TabIndex = 55;
             label21.Text = "Departamento:";
             // 
-            // textBox18
+            // TxtDepartamento
             // 
-            textBox18.Location = new Point(44, 332);
-            textBox18.Margin = new Padding(4, 3, 4, 3);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(171, 23);
-            textBox18.TabIndex = 56;
+            TxtDepartamento.Location = new Point(44, 332);
+            TxtDepartamento.Margin = new Padding(4, 3, 4, 3);
+            TxtDepartamento.Name = "TxtDepartamento";
+            TxtDepartamento.Size = new Size(171, 23);
+            TxtDepartamento.TabIndex = 56;
             // 
             // label22
             // 
@@ -486,13 +489,13 @@
             label22.TabIndex = 57;
             label22.Text = "Celular 1:";
             // 
-            // textBox19
+            // TxtCelular1
             // 
-            textBox19.Location = new Point(233, 331);
-            textBox19.Margin = new Padding(4, 3, 4, 3);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(116, 23);
-            textBox19.TabIndex = 58;
+            TxtCelular1.Location = new Point(233, 331);
+            TxtCelular1.Margin = new Padding(4, 3, 4, 3);
+            TxtCelular1.Name = "TxtCelular1";
+            TxtCelular1.Size = new Size(116, 23);
+            TxtCelular1.TabIndex = 58;
             // 
             // label23
             // 
@@ -504,13 +507,13 @@
             label23.TabIndex = 59;
             label23.Text = "Celular 2:";
             // 
-            // textBox20
+            // TxtCelular2
             // 
-            textBox20.Location = new Point(377, 331);
-            textBox20.Margin = new Padding(4, 3, 4, 3);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(116, 23);
-            textBox20.TabIndex = 60;
+            TxtCelular2.Location = new Point(377, 331);
+            TxtCelular2.Margin = new Padding(4, 3, 4, 3);
+            TxtCelular2.Name = "TxtCelular2";
+            TxtCelular2.Size = new Size(116, 23);
+            TxtCelular2.TabIndex = 60;
             // 
             // label24
             // 
@@ -522,13 +525,13 @@
             label24.TabIndex = 61;
             label24.Text = "WhatsApp:";
             // 
-            // textBox21
+            // TxtWhatsapp
             // 
-            textBox21.Location = new Point(511, 332);
-            textBox21.Margin = new Padding(4, 3, 4, 3);
-            textBox21.Name = "textBox21";
-            textBox21.Size = new Size(116, 23);
-            textBox21.TabIndex = 62;
+            TxtWhatsapp.Location = new Point(511, 332);
+            TxtWhatsapp.Margin = new Padding(4, 3, 4, 3);
+            TxtWhatsapp.Name = "TxtWhatsapp";
+            TxtWhatsapp.Size = new Size(116, 23);
+            TxtWhatsapp.TabIndex = 62;
             // 
             // label25
             // 
@@ -540,13 +543,13 @@
             label25.TabIndex = 63;
             label25.Text = "Email:";
             // 
-            // textBox22
+            // TxtEmail
             // 
-            textBox22.Location = new Point(664, 331);
-            textBox22.Margin = new Padding(4, 3, 4, 3);
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(219, 23);
-            textBox22.TabIndex = 64;
+            TxtEmail.Location = new Point(664, 331);
+            TxtEmail.Margin = new Padding(4, 3, 4, 3);
+            TxtEmail.Name = "TxtEmail";
+            TxtEmail.Size = new Size(219, 23);
+            TxtEmail.TabIndex = 64;
             // 
             // label26
             // 
@@ -558,13 +561,13 @@
             label26.TabIndex = 65;
             label26.Text = "Tipo de Contato:";
             // 
-            // textBox23
+            // TxtTipoContato
             // 
-            textBox23.Location = new Point(44, 391);
-            textBox23.Margin = new Padding(4, 3, 4, 3);
-            textBox23.Name = "textBox23";
-            textBox23.Size = new Size(171, 23);
-            textBox23.TabIndex = 66;
+            TxtTipoContato.Location = new Point(44, 391);
+            TxtTipoContato.Margin = new Padding(4, 3, 4, 3);
+            TxtTipoContato.Name = "TxtTipoContato";
+            TxtTipoContato.Size = new Size(171, 23);
+            TxtTipoContato.TabIndex = 66;
             // 
             // label27
             // 
@@ -576,13 +579,13 @@
             label27.TabIndex = 67;
             label27.Text = "Resultado obtido:";
             // 
-            // textBox24
+            // TxtResultadoObtido
             // 
-            textBox24.Location = new Point(233, 391);
-            textBox24.Margin = new Padding(4, 3, 4, 3);
-            textBox24.Name = "textBox24";
-            textBox24.Size = new Size(116, 23);
-            textBox24.TabIndex = 68;
+            TxtResultadoObtido.Location = new Point(233, 391);
+            TxtResultadoObtido.Margin = new Padding(4, 3, 4, 3);
+            TxtResultadoObtido.Name = "TxtResultadoObtido";
+            TxtResultadoObtido.Size = new Size(116, 23);
+            TxtResultadoObtido.TabIndex = 68;
             // 
             // label28
             // 
@@ -596,24 +599,58 @@
             // 
             // Contato
             // 
-            Contato.Controls.Add(richTextBox1);
+            Contato.Controls.Add(BtnDeleteContato);
+            Contato.Controls.Add(BtnUpContato);
+            Contato.Controls.Add(BtnAddContato);
+            Contato.Controls.Add(TxtObservacoes);
             Contato.Location = new Point(24, 233);
             Contato.Margin = new Padding(4, 3, 4, 3);
             Contato.Name = "Contato";
             Contato.Padding = new Padding(4, 3, 4, 3);
-            Contato.Size = new Size(882, 217);
+            Contato.Size = new Size(882, 247);
             Contato.TabIndex = 70;
             Contato.TabStop = false;
             Contato.Text = "Contatos";
             // 
-            // richTextBox1
+            // BtnDeleteContato
             // 
-            richTextBox1.Location = new Point(352, 158);
-            richTextBox1.Margin = new Padding(4, 3, 4, 3);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(506, 36);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            BtnDeleteContato.Location = new Point(750, 210);
+            BtnDeleteContato.Margin = new Padding(4, 3, 4, 3);
+            BtnDeleteContato.Name = "BtnDeleteContato";
+            BtnDeleteContato.Size = new Size(108, 27);
+            BtnDeleteContato.TabIndex = 78;
+            BtnDeleteContato.Text = "Excluir Contato";
+            BtnDeleteContato.UseVisualStyleBackColor = true;
+            // 
+            // BtnUpContato
+            // 
+            BtnUpContato.Location = new Point(619, 210);
+            BtnUpContato.Margin = new Padding(4, 3, 4, 3);
+            BtnUpContato.Name = "BtnUpContato";
+            BtnUpContato.Size = new Size(108, 27);
+            BtnUpContato.TabIndex = 77;
+            BtnUpContato.Text = "Atualizar Contato";
+            BtnUpContato.UseVisualStyleBackColor = true;
+            // 
+            // BtnAddContato
+            // 
+            BtnAddContato.Location = new Point(495, 210);
+            BtnAddContato.Margin = new Padding(4, 3, 4, 3);
+            BtnAddContato.Name = "BtnAddContato";
+            BtnAddContato.Size = new Size(108, 27);
+            BtnAddContato.TabIndex = 76;
+            BtnAddContato.Text = "Novo Contato";
+            BtnAddContato.UseVisualStyleBackColor = true;
+            BtnAddContato.Click += BtnAddContato_Click;
+            // 
+            // TxtObservacoes
+            // 
+            TxtObservacoes.Location = new Point(352, 158);
+            TxtObservacoes.Margin = new Padding(4, 3, 4, 3);
+            TxtObservacoes.Name = "TxtObservacoes";
+            TxtObservacoes.Size = new Size(506, 36);
+            TxtObservacoes.TabIndex = 0;
+            TxtObservacoes.Text = "";
             // 
             // groupBox1
             // 
@@ -626,84 +663,84 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             // 
-            // button1
+            // BtnCadastrar
             // 
-            button1.Location = new Point(44, 471);
-            button1.Margin = new Padding(4, 3, 4, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 27);
-            button1.TabIndex = 72;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnCadastrar.Location = new Point(39, 486);
+            BtnCadastrar.Margin = new Padding(4, 3, 4, 3);
+            BtnCadastrar.Name = "BtnCadastrar";
+            BtnCadastrar.Size = new Size(108, 27);
+            BtnCadastrar.TabIndex = 72;
+            BtnCadastrar.Text = "Cadastrar";
+            BtnCadastrar.UseVisualStyleBackColor = true;
+            BtnCadastrar.Click += BtnCadastrar_Click;
             // 
-            // button3
+            // BtnAtualizar
             // 
-            button3.Location = new Point(287, 471);
-            button3.Margin = new Padding(4, 3, 4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(108, 27);
-            button3.TabIndex = 74;
-            button3.Text = "Excluir";
-            button3.UseVisualStyleBackColor = true;
+            BtnAtualizar.Location = new Point(165, 486);
+            BtnAtualizar.Margin = new Padding(4, 3, 4, 3);
+            BtnAtualizar.Name = "BtnAtualizar";
+            BtnAtualizar.Size = new Size(108, 27);
+            BtnAtualizar.TabIndex = 75;
+            BtnAtualizar.Text = "Atualizar";
+            BtnAtualizar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnExcluir
             // 
-            button2.Location = new Point(166, 471);
-            button2.Margin = new Padding(4, 3, 4, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 27);
-            button2.TabIndex = 75;
-            button2.Text = "Atualizar";
-            button2.UseVisualStyleBackColor = true;
+            BtnExcluir.Location = new Point(294, 486);
+            BtnExcluir.Margin = new Padding(4, 3, 4, 3);
+            BtnExcluir.Name = "BtnExcluir";
+            BtnExcluir.Size = new Size(108, 27);
+            BtnExcluir.TabIndex = 76;
+            BtnExcluir.Text = "Excluir";
+            BtnExcluir.UseVisualStyleBackColor = true;
             // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
-            Controls.Add(button2);
-            Controls.Add(button3);
-            Controls.Add(button1);
+            ClientSize = new Size(933, 526);
+            Controls.Add(BtnExcluir);
+            Controls.Add(BtnAtualizar);
+            Controls.Add(BtnCadastrar);
             Controls.Add(label28);
-            Controls.Add(textBox24);
+            Controls.Add(TxtResultadoObtido);
             Controls.Add(label27);
-            Controls.Add(textBox23);
+            Controls.Add(TxtTipoContato);
             Controls.Add(label26);
-            Controls.Add(textBox22);
+            Controls.Add(TxtEmail);
             Controls.Add(label25);
-            Controls.Add(textBox21);
+            Controls.Add(TxtWhatsapp);
             Controls.Add(label24);
-            Controls.Add(textBox20);
+            Controls.Add(TxtCelular2);
             Controls.Add(label23);
-            Controls.Add(textBox19);
+            Controls.Add(TxtCelular1);
             Controls.Add(label22);
-            Controls.Add(textBox18);
+            Controls.Add(TxtDepartamento);
             Controls.Add(label21);
-            Controls.Add(textBox17);
+            Controls.Add(TxtAniversario);
             Controls.Add(label20);
-            Controls.Add(comboBox3);
+            Controls.Add(TxtSexo);
             Controls.Add(label19);
-            Controls.Add(textBox16);
+            Controls.Add(TxtCargo);
             Controls.Add(label18);
-            Controls.Add(textBox15);
+            Controls.Add(TxtNome);
             Controls.Add(label17);
             Controls.Add(comboBox2);
             Controls.Add(label16);
-            Controls.Add(textBox14);
-            Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtUf);
+            Controls.Add(TxtCidade);
+            Controls.Add(TxtComplemento);
+            Controls.Add(TxtNumero);
+            Controls.Add(TxtEndereco);
+            Controls.Add(TxtCep);
+            Controls.Add(TxtDataFundacao);
+            Controls.Add(TxtInscricaoEstadual);
+            Controls.Add(TxtNomeFantasia);
+            Controls.Add(TxtRazaoSocial);
+            Controls.Add(TxtCnpj);
+            Controls.Add(TxtRamoAtuacao);
+            Controls.Add(TxtTelefone);
+            Controls.Add(TxtSite);
             Controls.Add(comboBox1);
             Controls.Add(label15);
             Controls.Add(label14);
@@ -752,50 +789,53 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox TxtSite;
+        private System.Windows.Forms.TextBox TxtTelefone;
+        private System.Windows.Forms.TextBox TxtRamoAtuacao;
+        private System.Windows.Forms.TextBox TxtCnpj;
+        private System.Windows.Forms.TextBox TxtRazaoSocial;
+        private System.Windows.Forms.TextBox TxtNomeFantasia;
+        private System.Windows.Forms.TextBox TxtInscricaoEstadual;
+        private System.Windows.Forms.TextBox TxtDataFundacao;
+        private System.Windows.Forms.TextBox TxtCep;
+        private System.Windows.Forms.TextBox TxtEndereco;
+        private System.Windows.Forms.TextBox TxtNumero;
+        private System.Windows.Forms.TextBox TxtComplemento;
+        private System.Windows.Forms.TextBox TxtCidade;
+        private System.Windows.Forms.TextBox TxtUf;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox TxtCargo;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox TxtSexo;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox TxtAniversario;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox TxtDepartamento;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox TxtCelular1;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox TxtCelular2;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox TxtWhatsapp;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox TxtTipoContato;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox TxtResultadoObtido;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox Contato;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox TxtObservacoes;
+        private System.Windows.Forms.Button BtnCadastrar;
+        private System.Windows.Forms.Button BtnAtualizar;
+        private Button BtnAddContato;
+        private Button BtnDeleteContato;
+        private Button BtnUpContato;
+        private Button BtnExcluir;
     }
 }
