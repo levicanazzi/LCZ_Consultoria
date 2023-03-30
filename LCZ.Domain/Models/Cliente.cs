@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LCZ.Domain.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -16,7 +17,7 @@ namespace LCZ.Domain.Models
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
         public int InscricaoEstadual { get; set; }
-        public DateTime DataFundacao { get; set; }
+        public TipoClienteStatus TipoCliente { get; set; }
         public string Cep { get; set; }
         public string Endereco { get; set; }
         public int Numero { get; set; }
@@ -29,14 +30,14 @@ namespace LCZ.Domain.Models
             
         }
         public Cliente(string cnpj, string razaoSocial, string nomeFantasia,
-            int inscricaoEstadual, DateTime dataFundacao, string cep, string endereco,
+            int inscricaoEstadual, TipoClienteStatus tipoCliente, string cep, string endereco,
             int numero, string complemento, string cidade, string uf, List<ContatoCliente> contatos)
         {
             Cnpj = cnpj;
             RazaoSocial = razaoSocial;
             NomeFantasia = nomeFantasia;
             InscricaoEstadual = inscricaoEstadual;
-            DataFundacao = dataFundacao;
+            TipoCliente = tipoCliente;
             Cep = cep;
             Endereco = endereco;
             Numero = numero;

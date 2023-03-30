@@ -46,7 +46,7 @@
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
-            comboBox1 = new ComboBox();
+            cmbPesquisar = new ComboBox();
             TxtSite = new TextBox();
             TxtTelefone = new TextBox();
             TxtRamoAtuacao = new TextBox();
@@ -54,7 +54,6 @@
             TxtRazaoSocial = new TextBox();
             TxtNomeFantasia = new TextBox();
             TxtInscricaoEstadual = new TextBox();
-            TxtDataFundacao = new TextBox();
             TxtCep = new TextBox();
             TxtEndereco = new TextBox();
             TxtNumero = new TextBox();
@@ -68,7 +67,7 @@
             label18 = new Label();
             TxtCargo = new TextBox();
             label19 = new Label();
-            TxtSexo = new ComboBox();
+            cmbSexo = new ComboBox();
             label20 = new Label();
             TxtAniversario = new TextBox();
             label21 = new Label();
@@ -82,20 +81,22 @@
             label25 = new Label();
             TxtEmail = new TextBox();
             label26 = new Label();
-            TxtTipoContato = new TextBox();
             label27 = new Label();
-            TxtResultadoObtido = new TextBox();
             label28 = new Label();
             Contato = new GroupBox();
+            cmbContatoPara = new ComboBox();
+            cmbTipoContato = new ComboBox();
             BtnDeleteContato = new Button();
             BtnUpContato = new Button();
             BtnAddContato = new Button();
             TxtObservacoes = new RichTextBox();
             groupBox1 = new GroupBox();
+            cmbTipoCliente = new ComboBox();
             BtnCadastrar = new Button();
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
             Contato.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -174,9 +175,9 @@
             label8.Location = new Point(756, 110);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(103, 15);
+            label8.Size = new Size(86, 15);
             label8.TabIndex = 14;
-            label8.Text = "Data de fundação:";
+            label8.Text = "Tipo de Cliente";
             // 
             // label9
             // 
@@ -248,14 +249,14 @@
             label15.TabIndex = 29;
             label15.Text = "UF:";
             // 
-            // comboBox1
+            // cmbPesquisar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(44, 67);
-            comboBox1.Margin = new Padding(4, 3, 4, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(331, 23);
-            comboBox1.TabIndex = 30;
+            cmbPesquisar.FormattingEnabled = true;
+            cmbPesquisar.Location = new Point(44, 67);
+            cmbPesquisar.Margin = new Padding(4, 3, 4, 3);
+            cmbPesquisar.Name = "cmbPesquisar";
+            cmbPesquisar.Size = new Size(331, 23);
+            cmbPesquisar.TabIndex = 30;
             // 
             // TxtSite
             // 
@@ -312,14 +313,6 @@
             TxtInscricaoEstadual.Name = "TxtInscricaoEstadual";
             TxtInscricaoEstadual.Size = new Size(119, 23);
             TxtInscricaoEstadual.TabIndex = 37;
-            // 
-            // TxtDataFundacao
-            // 
-            TxtDataFundacao.Location = new Point(761, 128);
-            TxtDataFundacao.Margin = new Padding(4, 3, 4, 3);
-            TxtDataFundacao.Name = "TxtDataFundacao";
-            TxtDataFundacao.Size = new Size(122, 23);
-            TxtDataFundacao.TabIndex = 38;
             // 
             // TxtCep
             // 
@@ -434,14 +427,15 @@
             label19.TabIndex = 51;
             label19.Text = "Sexo:";
             // 
-            // TxtSexo
+            // cmbSexo
             // 
-            TxtSexo.FormattingEnabled = true;
-            TxtSexo.Location = new Point(643, 270);
-            TxtSexo.Margin = new Padding(4, 3, 4, 3);
-            TxtSexo.Name = "TxtSexo";
-            TxtSexo.Size = new Size(97, 23);
-            TxtSexo.TabIndex = 52;
+            cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSexo.FormattingEnabled = true;
+            cmbSexo.Location = new Point(643, 270);
+            cmbSexo.Margin = new Padding(4, 3, 4, 3);
+            cmbSexo.Name = "cmbSexo";
+            cmbSexo.Size = new Size(97, 23);
+            cmbSexo.TabIndex = 52;
             // 
             // label20
             // 
@@ -561,31 +555,15 @@
             label26.TabIndex = 65;
             label26.Text = "Tipo de Contato:";
             // 
-            // TxtTipoContato
-            // 
-            TxtTipoContato.Location = new Point(44, 391);
-            TxtTipoContato.Margin = new Padding(4, 3, 4, 3);
-            TxtTipoContato.Name = "TxtTipoContato";
-            TxtTipoContato.Size = new Size(171, 23);
-            TxtTipoContato.TabIndex = 66;
-            // 
             // label27
             // 
             label27.AutoSize = true;
             label27.Location = new Point(230, 373);
             label27.Margin = new Padding(4, 0, 4, 0);
             label27.Name = "label27";
-            label27.Size = new Size(100, 15);
+            label27.Size = new Size(79, 15);
             label27.TabIndex = 67;
-            label27.Text = "Resultado obtido:";
-            // 
-            // TxtResultadoObtido
-            // 
-            TxtResultadoObtido.Location = new Point(233, 391);
-            TxtResultadoObtido.Margin = new Padding(4, 3, 4, 3);
-            TxtResultadoObtido.Name = "TxtResultadoObtido";
-            TxtResultadoObtido.Size = new Size(116, 23);
-            TxtResultadoObtido.TabIndex = 68;
+            label27.Text = "Contato para:";
             // 
             // label28
             // 
@@ -593,12 +571,14 @@
             label28.Location = new Point(373, 373);
             label28.Margin = new Padding(4, 0, 4, 0);
             label28.Name = "label28";
-            label28.Size = new Size(77, 15);
+            label28.Size = new Size(125, 15);
             label28.TabIndex = 69;
-            label28.Text = "Observações:";
+            label28.Text = "Historico de Contatos:";
             // 
             // Contato
             // 
+            Contato.Controls.Add(cmbContatoPara);
+            Contato.Controls.Add(cmbTipoContato);
             Contato.Controls.Add(BtnDeleteContato);
             Contato.Controls.Add(BtnUpContato);
             Contato.Controls.Add(BtnAddContato);
@@ -611,6 +591,26 @@
             Contato.TabIndex = 70;
             Contato.TabStop = false;
             Contato.Text = "Contatos";
+            // 
+            // cmbContatoPara
+            // 
+            cmbContatoPara.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbContatoPara.FormattingEnabled = true;
+            cmbContatoPara.Location = new Point(206, 158);
+            cmbContatoPara.Margin = new Padding(4, 3, 4, 3);
+            cmbContatoPara.Name = "cmbContatoPara";
+            cmbContatoPara.Size = new Size(128, 23);
+            cmbContatoPara.TabIndex = 80;
+            // 
+            // cmbTipoContato
+            // 
+            cmbTipoContato.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoContato.FormattingEnabled = true;
+            cmbTipoContato.Location = new Point(20, 158);
+            cmbTipoContato.Margin = new Padding(4, 3, 4, 3);
+            cmbTipoContato.Name = "cmbTipoContato";
+            cmbTipoContato.Size = new Size(146, 23);
+            cmbTipoContato.TabIndex = 79;
             // 
             // BtnDeleteContato
             // 
@@ -654,6 +654,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmbTipoCliente);
             groupBox1.Location = new Point(24, 28);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
@@ -662,6 +663,16 @@
             groupBox1.TabIndex = 71;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
+            // 
+            // cmbTipoCliente
+            // 
+            cmbTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoCliente.FormattingEnabled = true;
+            cmbTipoCliente.Location = new Point(738, 100);
+            cmbTipoCliente.Margin = new Padding(4, 3, 4, 3);
+            cmbTipoCliente.Name = "cmbTipoCliente";
+            cmbTipoCliente.Size = new Size(121, 23);
+            cmbTipoCliente.TabIndex = 77;
             // 
             // BtnCadastrar
             // 
@@ -703,9 +714,7 @@
             Controls.Add(BtnAtualizar);
             Controls.Add(BtnCadastrar);
             Controls.Add(label28);
-            Controls.Add(TxtResultadoObtido);
             Controls.Add(label27);
-            Controls.Add(TxtTipoContato);
             Controls.Add(label26);
             Controls.Add(TxtEmail);
             Controls.Add(label25);
@@ -719,7 +728,7 @@
             Controls.Add(label21);
             Controls.Add(TxtAniversario);
             Controls.Add(label20);
-            Controls.Add(TxtSexo);
+            Controls.Add(cmbSexo);
             Controls.Add(label19);
             Controls.Add(TxtCargo);
             Controls.Add(label18);
@@ -733,7 +742,6 @@
             Controls.Add(TxtNumero);
             Controls.Add(TxtEndereco);
             Controls.Add(TxtCep);
-            Controls.Add(TxtDataFundacao);
             Controls.Add(TxtInscricaoEstadual);
             Controls.Add(TxtNomeFantasia);
             Controls.Add(TxtRazaoSocial);
@@ -741,7 +749,7 @@
             Controls.Add(TxtRamoAtuacao);
             Controls.Add(TxtTelefone);
             Controls.Add(TxtSite);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbPesquisar);
             Controls.Add(label15);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -765,6 +773,7 @@
             Text = "Clientes";
             Load += ClientesForm_Load;
             Contato.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -788,7 +797,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPesquisar;
         private System.Windows.Forms.TextBox TxtSite;
         private System.Windows.Forms.TextBox TxtTelefone;
         private System.Windows.Forms.TextBox TxtRamoAtuacao;
@@ -796,7 +805,6 @@
         private System.Windows.Forms.TextBox TxtRazaoSocial;
         private System.Windows.Forms.TextBox TxtNomeFantasia;
         private System.Windows.Forms.TextBox TxtInscricaoEstadual;
-        private System.Windows.Forms.TextBox TxtDataFundacao;
         private System.Windows.Forms.TextBox TxtCep;
         private System.Windows.Forms.TextBox TxtEndereco;
         private System.Windows.Forms.TextBox TxtNumero;
@@ -810,7 +818,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TxtCargo;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox TxtSexo;
+        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox TxtAniversario;
         private System.Windows.Forms.Label label21;
@@ -824,9 +832,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox TxtTipoContato;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox TxtResultadoObtido;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox Contato;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -837,5 +843,8 @@
         private Button BtnDeleteContato;
         private Button BtnUpContato;
         private Button BtnExcluir;
+        private ComboBox cmbContatoPara;
+        private ComboBox cmbTipoContato;
+        private ComboBox cmbTipoCliente;
     }
 }
