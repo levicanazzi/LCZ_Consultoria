@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LCZ.Application\LCZ.Application.csproj" />
     <ProjectReference Include="..\LCZ.Infra\LCZ.Infra.csproj" />
   </ItemGroup>
 

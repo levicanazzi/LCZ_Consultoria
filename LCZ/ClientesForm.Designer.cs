@@ -257,6 +257,7 @@
             cmbPesquisar.Name = "cmbPesquisar";
             cmbPesquisar.Size = new Size(331, 23);
             cmbPesquisar.TabIndex = 30;
+            cmbPesquisar.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
             // TxtSite
             // 

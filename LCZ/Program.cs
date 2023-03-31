@@ -1,5 +1,3 @@
-using LCZ.Application.Services;
-using LCZ.Domain.Interfaces.IApplication;
 using LCZ.Domain.Interfaces.IRepository;
 using LCZ.Infra.Repository.Data;
 using LCZ.Infra.Repository.Data.Entities;
@@ -33,9 +31,7 @@ namespace LCZ
                    options.UseSqlServer(sCon));
 
                 services.AddTransient<IClienteRepository, ClienteRepository>();
-                services.AddTransient<IClienteAppService, ClienteAppService>();
                 services.AddTransient<IContatoClienteRepository, ContatoClienteRepository>();
-                services.AddTransient<IContatoClienteAppService, ContatoClienteAppService>();
                 services.AddTransient<ClientesForm>();
             });
 
