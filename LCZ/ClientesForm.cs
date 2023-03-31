@@ -2,6 +2,7 @@
 using LCZ.Domain.Models;
 using LCZ.Domain.Models.Enums;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System;
 using System.Collections.Generic;
@@ -41,23 +42,46 @@ namespace LCZ
 
             _clienteRepo.Add(new Cliente()
             {
-                Cnpj = TxtCnpj.Text,
-                RazaoSocial = TxtRazaoSocial.Text,
-                NomeFantasia = TxtNomeFantasia.Text,
-                InscricaoEstadual = int.Parse(TxtInscricaoEstadual.Text),
+                Cnpj = txtCnpj.Text,
+                Site = txtSite.Text,
+                Telefone = txtTelefone.Text,
+                RamoAtuacao = txtRamoAtuacao.Text,
+                RazaoSocial = txtRazaoSocial.Text,
+                NomeFantasia = txtNomeFantasia.Text,
+                InscricaoEstadual = txtInscricaoEstadual.Text,
                 TipoCliente = tipoCliente,
-                Cep = TxtCep.Text,
-                Endereco = TxtEndereco.Text,
-                Numero = int.Parse(TxtNumero.Text),
-                Complemento = TxtComplemento.Text,
-                Cidade = TxtCidade.Text,
-                Uf = TxtUf.Text,
+                Cep = txtCep.Text,
+                Endereco = txtEndereco.Text,
+                Numero = txtNumero.Text,
+                Complemento = txtComplemento.Text,
+                Cidade = txtCidade.Text,
+                Uf = txtUf.Text,
                 ContatosCliente = _contatos
             });
 
             _clienteRepo.Save();
+            LimparCamposCliente();
         }
 
+        private void LimparCamposCliente()
+        {
+            txtPesquisar.Text = "";
+            cmbPesquisar.SelectedIndex = -1;
+            txtSite.Text = "";
+            txtTelefone.Text = "";
+            txtRamoAtuacao.Text = "";
+            txtCnpj.Text = "";
+            txtRazaoSocial.Text = "";
+            txtNomeFantasia.Text = "";
+            txtInscricaoEstadual.Text = "";
+            cmbTipoCliente.SelectedIndex = -1;
+            txtCep.Text = "";
+            txtEndereco.Text = "";
+            txtNumero.Text = "";
+            txtComplemento.Text = "";
+            txtCidade.Text = "";
+            txtUf.Text = "";
+        }
         private void ClientesForm_Load(object sender, EventArgs e)
         {
             //CarregarComboBox();
@@ -70,18 +94,18 @@ namespace LCZ
 
             _contatoClienteRepo.Add(new ContatoCliente()
             {
-                Nome = TxtNome.Text,
-                Cargo = TxtCargo.Text,
+                Nome = txtNomeContato.Text,
+                Cargo = txtCargo.Text,
                 Sexo = sexoStatus,
-                Aniversario = DateTime.Parse(TxtAniversario.Text),
-                Celular1 = TxtCelular1.Text,
-                Celular2 = TxtCelular2.Text,
-                Whatsapp = TxtWhatsapp.Text,
-                Email = TxtEmail.Text,
-                Departamento = TxtDepartamento.Text,
+                Aniversario = DateTime.Parse(txtAniversario.Text),
+                Celular1 = txtCelular1.Text,
+                Celular2 = txtCelular2.Text,
+                Whatsapp = txtWhatsapp.Text,
+                Email = txtEmail.Text,
+                Departamento = txtDepartamento.Text,
                 TipoContato = tipoContato,
                 ContatoPara = contatoPara,
-                Observacoes = TxtObservacoes.Text
+                Observacoes = txtHistorico.Text
             });
             _contatoClienteRepo.Save();
 
@@ -129,7 +153,20 @@ namespace LCZ
 
             if (cliente != null)
             {
-                TxtCnpj.Text = cliente.Cnpj;
+                txtSite.Text = cliente.Site;
+                txtTelefone.Text = cliente.Telefone;
+                txtRamoAtuacao.Text = cliente.RamoAtuacao;
+                txtCnpj.Text = cliente.Cnpj;
+                txtRazaoSocial.Text = cliente.RazaoSocial;
+                txtNomeFantasia.Text = cliente.NomeFantasia;
+                txtInscricaoEstadual.Text = cliente.InscricaoEstadual;
+                cmbTipoCliente.Text = cliente.TipoCliente.ToString();
+                txtCep.Text = cliente.Cep;
+                txtEndereco.Text = cliente.Endereco;
+                txtNumero.Text = cliente.Numero;
+                txtComplemento.Text = cliente.Complemento;
+                txtCidade.Text = cliente.Cidade;
+                txtUf.Text = cliente.Uf;
             }
         }
 
@@ -155,6 +192,18 @@ namespace LCZ
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             CarregarComboBox();
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            var idCliente = int.Parse(cmbPesquisar.SelectedValue.ToString());
+
+            var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
+
+            _clienteRepo.Remove(cliente);
+            _clienteRepo.Save();
+
+            LimparCamposCliente();
         }
     }
 

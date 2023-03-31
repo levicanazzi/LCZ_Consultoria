@@ -47,39 +47,39 @@
             label14 = new Label();
             label15 = new Label();
             cmbPesquisar = new ComboBox();
-            TxtSite = new TextBox();
-            TxtTelefone = new TextBox();
-            TxtRamoAtuacao = new TextBox();
-            TxtCnpj = new TextBox();
-            TxtRazaoSocial = new TextBox();
-            TxtNomeFantasia = new TextBox();
-            TxtInscricaoEstadual = new TextBox();
-            TxtCep = new TextBox();
-            TxtEndereco = new TextBox();
-            TxtNumero = new TextBox();
-            TxtComplemento = new TextBox();
-            TxtCidade = new TextBox();
-            TxtUf = new TextBox();
+            txtSite = new TextBox();
+            txtTelefone = new TextBox();
+            txtRamoAtuacao = new TextBox();
+            txtCnpj = new TextBox();
+            txtRazaoSocial = new TextBox();
+            txtNomeFantasia = new TextBox();
+            txtInscricaoEstadual = new TextBox();
+            txtCep = new TextBox();
+            txtEndereco = new TextBox();
+            txtNumero = new TextBox();
+            txtComplemento = new TextBox();
+            txtCidade = new TextBox();
+            txtUf = new TextBox();
             label16 = new Label();
-            comboBox2 = new ComboBox();
+            cmbPesquisarContato = new ComboBox();
             label17 = new Label();
-            TxtNome = new TextBox();
+            txtNomeContato = new TextBox();
             label18 = new Label();
-            TxtCargo = new TextBox();
+            txtCargo = new TextBox();
             label19 = new Label();
             cmbSexo = new ComboBox();
             label20 = new Label();
-            TxtAniversario = new TextBox();
+            txtAniversario = new TextBox();
             label21 = new Label();
-            TxtDepartamento = new TextBox();
+            txtDepartamento = new TextBox();
             label22 = new Label();
-            TxtCelular1 = new TextBox();
+            txtCelular1 = new TextBox();
             label23 = new Label();
-            TxtCelular2 = new TextBox();
+            txtCelular2 = new TextBox();
             label24 = new Label();
-            TxtWhatsapp = new TextBox();
+            txtWhatsapp = new TextBox();
             label25 = new Label();
-            TxtEmail = new TextBox();
+            txtEmail = new TextBox();
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
@@ -89,14 +89,14 @@
             BtnDeleteContato = new Button();
             BtnUpContato = new Button();
             BtnAddContato = new Button();
-            TxtObservacoes = new RichTextBox();
+            txtHistorico = new RichTextBox();
             groupBox1 = new GroupBox();
+            btnPesquisar = new Button();
+            txtPesquisar = new TextBox();
             cmbTipoCliente = new ComboBox();
             BtnCadastrar = new Button();
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
-            txtPesquisar = new TextBox();
-            btnPesquisar = new Button();
             Contato.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -261,109 +261,109 @@
             cmbPesquisar.TabIndex = 30;
             cmbPesquisar.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
-            // TxtSite
+            // txtSite
             // 
-            TxtSite.Location = new Point(421, 68);
-            TxtSite.Margin = new Padding(4, 3, 4, 3);
-            TxtSite.Name = "TxtSite";
-            TxtSite.Size = new Size(166, 23);
-            TxtSite.TabIndex = 31;
+            txtSite.Location = new Point(421, 68);
+            txtSite.Margin = new Padding(4, 3, 4, 3);
+            txtSite.Name = "txtSite";
+            txtSite.Size = new Size(166, 23);
+            txtSite.TabIndex = 31;
             // 
-            // TxtTelefone
+            // txtTelefone
             // 
-            TxtTelefone.Location = new Point(621, 68);
-            TxtTelefone.Margin = new Padding(4, 3, 4, 3);
-            TxtTelefone.Name = "TxtTelefone";
-            TxtTelefone.Size = new Size(112, 23);
-            TxtTelefone.TabIndex = 32;
+            txtTelefone.Location = new Point(621, 68);
+            txtTelefone.Margin = new Padding(4, 3, 4, 3);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(112, 23);
+            txtTelefone.TabIndex = 32;
             // 
-            // TxtRamoAtuacao
+            // txtRamoAtuacao
             // 
-            TxtRamoAtuacao.Location = new Point(761, 68);
-            TxtRamoAtuacao.Margin = new Padding(4, 3, 4, 3);
-            TxtRamoAtuacao.Name = "TxtRamoAtuacao";
-            TxtRamoAtuacao.Size = new Size(122, 23);
-            TxtRamoAtuacao.TabIndex = 33;
+            txtRamoAtuacao.Location = new Point(761, 68);
+            txtRamoAtuacao.Margin = new Padding(4, 3, 4, 3);
+            txtRamoAtuacao.Name = "txtRamoAtuacao";
+            txtRamoAtuacao.Size = new Size(122, 23);
+            txtRamoAtuacao.TabIndex = 33;
             // 
-            // TxtCnpj
+            // txtCnpj
             // 
-            TxtCnpj.Location = new Point(44, 128);
-            TxtCnpj.Margin = new Padding(4, 3, 4, 3);
-            TxtCnpj.Name = "TxtCnpj";
-            TxtCnpj.Size = new Size(125, 23);
-            TxtCnpj.TabIndex = 34;
+            txtCnpj.Location = new Point(44, 128);
+            txtCnpj.Margin = new Padding(4, 3, 4, 3);
+            txtCnpj.Name = "txtCnpj";
+            txtCnpj.Size = new Size(125, 23);
+            txtCnpj.TabIndex = 34;
             // 
-            // TxtRazaoSocial
+            // txtRazaoSocial
             // 
-            TxtRazaoSocial.Location = new Point(191, 128);
-            TxtRazaoSocial.Margin = new Padding(4, 3, 4, 3);
-            TxtRazaoSocial.Name = "TxtRazaoSocial";
-            TxtRazaoSocial.Size = new Size(184, 23);
-            TxtRazaoSocial.TabIndex = 35;
+            txtRazaoSocial.Location = new Point(191, 128);
+            txtRazaoSocial.Margin = new Padding(4, 3, 4, 3);
+            txtRazaoSocial.Name = "txtRazaoSocial";
+            txtRazaoSocial.Size = new Size(184, 23);
+            txtRazaoSocial.TabIndex = 35;
             // 
-            // TxtNomeFantasia
+            // txtNomeFantasia
             // 
-            TxtNomeFantasia.Location = new Point(421, 128);
-            TxtNomeFantasia.Margin = new Padding(4, 3, 4, 3);
-            TxtNomeFantasia.Name = "TxtNomeFantasia";
-            TxtNomeFantasia.Size = new Size(166, 23);
-            TxtNomeFantasia.TabIndex = 36;
+            txtNomeFantasia.Location = new Point(421, 128);
+            txtNomeFantasia.Margin = new Padding(4, 3, 4, 3);
+            txtNomeFantasia.Name = "txtNomeFantasia";
+            txtNomeFantasia.Size = new Size(166, 23);
+            txtNomeFantasia.TabIndex = 36;
             // 
-            // TxtInscricaoEstadual
+            // txtInscricaoEstadual
             // 
-            TxtInscricaoEstadual.Location = new Point(621, 128);
-            TxtInscricaoEstadual.Margin = new Padding(4, 3, 4, 3);
-            TxtInscricaoEstadual.Name = "TxtInscricaoEstadual";
-            TxtInscricaoEstadual.Size = new Size(119, 23);
-            TxtInscricaoEstadual.TabIndex = 37;
+            txtInscricaoEstadual.Location = new Point(621, 128);
+            txtInscricaoEstadual.Margin = new Padding(4, 3, 4, 3);
+            txtInscricaoEstadual.Name = "txtInscricaoEstadual";
+            txtInscricaoEstadual.Size = new Size(119, 23);
+            txtInscricaoEstadual.TabIndex = 37;
             // 
-            // TxtCep
+            // txtCep
             // 
-            TxtCep.Location = new Point(44, 189);
-            TxtCep.Margin = new Padding(4, 3, 4, 3);
-            TxtCep.Name = "TxtCep";
-            TxtCep.Size = new Size(125, 23);
-            TxtCep.TabIndex = 39;
+            txtCep.Location = new Point(44, 189);
+            txtCep.Margin = new Padding(4, 3, 4, 3);
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(125, 23);
+            txtCep.TabIndex = 39;
             // 
-            // TxtEndereco
+            // txtEndereco
             // 
-            TxtEndereco.Location = new Point(191, 189);
-            TxtEndereco.Margin = new Padding(4, 3, 4, 3);
-            TxtEndereco.Name = "TxtEndereco";
-            TxtEndereco.Size = new Size(222, 23);
-            TxtEndereco.TabIndex = 40;
+            txtEndereco.Location = new Point(191, 189);
+            txtEndereco.Margin = new Padding(4, 3, 4, 3);
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.Size = new Size(222, 23);
+            txtEndereco.TabIndex = 40;
             // 
-            // TxtNumero
+            // txtNumero
             // 
-            TxtNumero.Location = new Point(421, 189);
-            TxtNumero.Margin = new Padding(4, 3, 4, 3);
-            TxtNumero.Name = "TxtNumero";
-            TxtNumero.Size = new Size(51, 23);
-            TxtNumero.TabIndex = 41;
+            txtNumero.Location = new Point(421, 189);
+            txtNumero.Margin = new Padding(4, 3, 4, 3);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(51, 23);
+            txtNumero.TabIndex = 41;
             // 
-            // TxtComplemento
+            // txtComplemento
             // 
-            TxtComplemento.Location = new Point(507, 189);
-            TxtComplemento.Margin = new Padding(4, 3, 4, 3);
-            TxtComplemento.Name = "TxtComplemento";
-            TxtComplemento.Size = new Size(156, 23);
-            TxtComplemento.TabIndex = 42;
+            txtComplemento.Location = new Point(507, 189);
+            txtComplemento.Margin = new Padding(4, 3, 4, 3);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.Size = new Size(156, 23);
+            txtComplemento.TabIndex = 42;
             // 
-            // TxtCidade
+            // txtCidade
             // 
-            TxtCidade.Location = new Point(694, 189);
-            TxtCidade.Margin = new Padding(4, 3, 4, 3);
-            TxtCidade.Name = "TxtCidade";
-            TxtCidade.Size = new Size(128, 23);
-            TxtCidade.TabIndex = 43;
+            txtCidade.Location = new Point(694, 189);
+            txtCidade.Margin = new Padding(4, 3, 4, 3);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(128, 23);
+            txtCidade.TabIndex = 43;
             // 
-            // TxtUf
+            // txtUf
             // 
-            TxtUf.Location = new Point(845, 189);
-            TxtUf.Margin = new Padding(4, 3, 4, 3);
-            TxtUf.Name = "TxtUf";
-            TxtUf.Size = new Size(38, 23);
-            TxtUf.TabIndex = 44;
+            txtUf.Location = new Point(845, 189);
+            txtUf.Margin = new Padding(4, 3, 4, 3);
+            txtUf.Name = "txtUf";
+            txtUf.Size = new Size(38, 23);
+            txtUf.TabIndex = 44;
             // 
             // label16
             // 
@@ -375,14 +375,14 @@
             label16.TabIndex = 45;
             label16.Text = "Pesquisar Contato:";
             // 
-            // comboBox2
+            // cmbPesquisarContato
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(44, 271);
-            comboBox2.Margin = new Padding(4, 3, 4, 3);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(171, 23);
-            comboBox2.TabIndex = 46;
+            cmbPesquisarContato.FormattingEnabled = true;
+            cmbPesquisarContato.Location = new Point(44, 271);
+            cmbPesquisarContato.Margin = new Padding(4, 3, 4, 3);
+            cmbPesquisarContato.Name = "cmbPesquisarContato";
+            cmbPesquisarContato.Size = new Size(171, 23);
+            cmbPesquisarContato.TabIndex = 46;
             // 
             // label17
             // 
@@ -394,13 +394,13 @@
             label17.TabIndex = 47;
             label17.Text = "Nome:";
             // 
-            // TxtNome
+            // txtNomeContato
             // 
-            TxtNome.Location = new Point(233, 271);
-            TxtNome.Margin = new Padding(4, 3, 4, 3);
-            TxtNome.Name = "TxtNome";
-            TxtNome.Size = new Size(259, 23);
-            TxtNome.TabIndex = 48;
+            txtNomeContato.Location = new Point(233, 271);
+            txtNomeContato.Margin = new Padding(4, 3, 4, 3);
+            txtNomeContato.Name = "txtNomeContato";
+            txtNomeContato.Size = new Size(259, 23);
+            txtNomeContato.TabIndex = 48;
             // 
             // label18
             // 
@@ -412,13 +412,13 @@
             label18.TabIndex = 49;
             label18.Text = "Cargo:";
             // 
-            // TxtCargo
+            // txtCargo
             // 
-            TxtCargo.Location = new Point(507, 271);
-            TxtCargo.Margin = new Padding(4, 3, 4, 3);
-            TxtCargo.Name = "TxtCargo";
-            TxtCargo.Size = new Size(119, 23);
-            TxtCargo.TabIndex = 50;
+            txtCargo.Location = new Point(507, 271);
+            txtCargo.Margin = new Padding(4, 3, 4, 3);
+            txtCargo.Name = "txtCargo";
+            txtCargo.Size = new Size(119, 23);
+            txtCargo.TabIndex = 50;
             // 
             // label19
             // 
@@ -450,13 +450,13 @@
             label20.TabIndex = 53;
             label20.Text = "Aniversário:";
             // 
-            // TxtAniversario
+            // txtAniversario
             // 
-            TxtAniversario.Location = new Point(761, 271);
-            TxtAniversario.Margin = new Padding(4, 3, 4, 3);
-            TxtAniversario.Name = "TxtAniversario";
-            TxtAniversario.Size = new Size(122, 23);
-            TxtAniversario.TabIndex = 54;
+            txtAniversario.Location = new Point(761, 271);
+            txtAniversario.Margin = new Padding(4, 3, 4, 3);
+            txtAniversario.Name = "txtAniversario";
+            txtAniversario.Size = new Size(122, 23);
+            txtAniversario.TabIndex = 54;
             // 
             // label21
             // 
@@ -468,13 +468,13 @@
             label21.TabIndex = 55;
             label21.Text = "Departamento:";
             // 
-            // TxtDepartamento
+            // txtDepartamento
             // 
-            TxtDepartamento.Location = new Point(44, 332);
-            TxtDepartamento.Margin = new Padding(4, 3, 4, 3);
-            TxtDepartamento.Name = "TxtDepartamento";
-            TxtDepartamento.Size = new Size(171, 23);
-            TxtDepartamento.TabIndex = 56;
+            txtDepartamento.Location = new Point(44, 332);
+            txtDepartamento.Margin = new Padding(4, 3, 4, 3);
+            txtDepartamento.Name = "txtDepartamento";
+            txtDepartamento.Size = new Size(171, 23);
+            txtDepartamento.TabIndex = 56;
             // 
             // label22
             // 
@@ -486,13 +486,13 @@
             label22.TabIndex = 57;
             label22.Text = "Celular 1:";
             // 
-            // TxtCelular1
+            // txtCelular1
             // 
-            TxtCelular1.Location = new Point(233, 331);
-            TxtCelular1.Margin = new Padding(4, 3, 4, 3);
-            TxtCelular1.Name = "TxtCelular1";
-            TxtCelular1.Size = new Size(116, 23);
-            TxtCelular1.TabIndex = 58;
+            txtCelular1.Location = new Point(233, 331);
+            txtCelular1.Margin = new Padding(4, 3, 4, 3);
+            txtCelular1.Name = "txtCelular1";
+            txtCelular1.Size = new Size(116, 23);
+            txtCelular1.TabIndex = 58;
             // 
             // label23
             // 
@@ -504,13 +504,13 @@
             label23.TabIndex = 59;
             label23.Text = "Celular 2:";
             // 
-            // TxtCelular2
+            // txtCelular2
             // 
-            TxtCelular2.Location = new Point(377, 331);
-            TxtCelular2.Margin = new Padding(4, 3, 4, 3);
-            TxtCelular2.Name = "TxtCelular2";
-            TxtCelular2.Size = new Size(116, 23);
-            TxtCelular2.TabIndex = 60;
+            txtCelular2.Location = new Point(377, 331);
+            txtCelular2.Margin = new Padding(4, 3, 4, 3);
+            txtCelular2.Name = "txtCelular2";
+            txtCelular2.Size = new Size(116, 23);
+            txtCelular2.TabIndex = 60;
             // 
             // label24
             // 
@@ -522,13 +522,13 @@
             label24.TabIndex = 61;
             label24.Text = "WhatsApp:";
             // 
-            // TxtWhatsapp
+            // txtWhatsapp
             // 
-            TxtWhatsapp.Location = new Point(511, 332);
-            TxtWhatsapp.Margin = new Padding(4, 3, 4, 3);
-            TxtWhatsapp.Name = "TxtWhatsapp";
-            TxtWhatsapp.Size = new Size(116, 23);
-            TxtWhatsapp.TabIndex = 62;
+            txtWhatsapp.Location = new Point(511, 332);
+            txtWhatsapp.Margin = new Padding(4, 3, 4, 3);
+            txtWhatsapp.Name = "txtWhatsapp";
+            txtWhatsapp.Size = new Size(116, 23);
+            txtWhatsapp.TabIndex = 62;
             // 
             // label25
             // 
@@ -540,13 +540,13 @@
             label25.TabIndex = 63;
             label25.Text = "Email:";
             // 
-            // TxtEmail
+            // txtEmail
             // 
-            TxtEmail.Location = new Point(664, 331);
-            TxtEmail.Margin = new Padding(4, 3, 4, 3);
-            TxtEmail.Name = "TxtEmail";
-            TxtEmail.Size = new Size(219, 23);
-            TxtEmail.TabIndex = 64;
+            txtEmail.Location = new Point(664, 331);
+            txtEmail.Margin = new Padding(4, 3, 4, 3);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(219, 23);
+            txtEmail.TabIndex = 64;
             // 
             // label26
             // 
@@ -585,7 +585,7 @@
             Contato.Controls.Add(BtnDeleteContato);
             Contato.Controls.Add(BtnUpContato);
             Contato.Controls.Add(BtnAddContato);
-            Contato.Controls.Add(TxtObservacoes);
+            Contato.Controls.Add(txtHistorico);
             Contato.Location = new Point(24, 233);
             Contato.Margin = new Padding(4, 3, 4, 3);
             Contato.Name = "Contato";
@@ -646,14 +646,14 @@
             BtnAddContato.UseVisualStyleBackColor = true;
             BtnAddContato.Click += BtnAddContato_Click;
             // 
-            // TxtObservacoes
+            // txtHistorico
             // 
-            TxtObservacoes.Location = new Point(352, 158);
-            TxtObservacoes.Margin = new Padding(4, 3, 4, 3);
-            TxtObservacoes.Name = "TxtObservacoes";
-            TxtObservacoes.Size = new Size(506, 36);
-            TxtObservacoes.TabIndex = 0;
-            TxtObservacoes.Text = "";
+            txtHistorico.Location = new Point(352, 158);
+            txtHistorico.Margin = new Padding(4, 3, 4, 3);
+            txtHistorico.Name = "txtHistorico";
+            txtHistorico.Size = new Size(506, 36);
+            txtHistorico.TabIndex = 0;
+            txtHistorico.Text = "";
             // 
             // groupBox1
             // 
@@ -668,6 +668,24 @@
             groupBox1.TabIndex = 71;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
+            // 
+            // btnPesquisar
+            // 
+            btnPesquisar.Location = new Point(173, 40);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(75, 22);
+            btnPesquisar.TabIndex = 78;
+            btnPesquisar.Text = "Buscar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
+            // 
+            // txtPesquisar
+            // 
+            txtPesquisar.Location = new Point(17, 40);
+            txtPesquisar.Margin = new Padding(4, 3, 4, 3);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.Size = new Size(149, 23);
+            txtPesquisar.TabIndex = 77;
             // 
             // cmbTipoCliente
             // 
@@ -709,24 +727,7 @@
             BtnExcluir.TabIndex = 76;
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // txtPesquisar
-            // 
-            txtPesquisar.Location = new Point(17, 40);
-            txtPesquisar.Margin = new Padding(4, 3, 4, 3);
-            txtPesquisar.Name = "txtPesquisar";
-            txtPesquisar.Size = new Size(149, 23);
-            txtPesquisar.TabIndex = 77;
-            // 
-            // btnPesquisar
-            // 
-            btnPesquisar.Location = new Point(173, 40);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(75, 22);
-            btnPesquisar.TabIndex = 78;
-            btnPesquisar.Text = "Buscar";
-            btnPesquisar.UseVisualStyleBackColor = true;
-            btnPesquisar.Click += btnPesquisar_Click;
+            BtnExcluir.Click += BtnExcluir_Click;
             // 
             // ClientesForm
             // 
@@ -739,39 +740,39 @@
             Controls.Add(label28);
             Controls.Add(label27);
             Controls.Add(label26);
-            Controls.Add(TxtEmail);
+            Controls.Add(txtEmail);
             Controls.Add(label25);
-            Controls.Add(TxtWhatsapp);
+            Controls.Add(txtWhatsapp);
             Controls.Add(label24);
-            Controls.Add(TxtCelular2);
+            Controls.Add(txtCelular2);
             Controls.Add(label23);
-            Controls.Add(TxtCelular1);
+            Controls.Add(txtCelular1);
             Controls.Add(label22);
-            Controls.Add(TxtDepartamento);
+            Controls.Add(txtDepartamento);
             Controls.Add(label21);
-            Controls.Add(TxtAniversario);
+            Controls.Add(txtAniversario);
             Controls.Add(label20);
             Controls.Add(cmbSexo);
             Controls.Add(label19);
-            Controls.Add(TxtCargo);
+            Controls.Add(txtCargo);
             Controls.Add(label18);
-            Controls.Add(TxtNome);
+            Controls.Add(txtNomeContato);
             Controls.Add(label17);
-            Controls.Add(comboBox2);
+            Controls.Add(cmbPesquisarContato);
             Controls.Add(label16);
-            Controls.Add(TxtUf);
-            Controls.Add(TxtCidade);
-            Controls.Add(TxtComplemento);
-            Controls.Add(TxtNumero);
-            Controls.Add(TxtEndereco);
-            Controls.Add(TxtCep);
-            Controls.Add(TxtInscricaoEstadual);
-            Controls.Add(TxtNomeFantasia);
-            Controls.Add(TxtRazaoSocial);
-            Controls.Add(TxtCnpj);
-            Controls.Add(TxtRamoAtuacao);
-            Controls.Add(TxtTelefone);
-            Controls.Add(TxtSite);
+            Controls.Add(txtUf);
+            Controls.Add(txtCidade);
+            Controls.Add(txtComplemento);
+            Controls.Add(txtNumero);
+            Controls.Add(txtEndereco);
+            Controls.Add(txtCep);
+            Controls.Add(txtInscricaoEstadual);
+            Controls.Add(txtNomeFantasia);
+            Controls.Add(txtRazaoSocial);
+            Controls.Add(txtCnpj);
+            Controls.Add(txtRamoAtuacao);
+            Controls.Add(txtTelefone);
+            Controls.Add(txtSite);
             Controls.Add(cmbPesquisar);
             Controls.Add(label15);
             Controls.Add(label14);
@@ -822,45 +823,45 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbPesquisar;
-        private System.Windows.Forms.TextBox TxtSite;
-        private System.Windows.Forms.TextBox TxtTelefone;
-        private System.Windows.Forms.TextBox TxtRamoAtuacao;
-        private System.Windows.Forms.TextBox TxtCnpj;
-        private System.Windows.Forms.TextBox TxtRazaoSocial;
-        private System.Windows.Forms.TextBox TxtNomeFantasia;
-        private System.Windows.Forms.TextBox TxtInscricaoEstadual;
-        private System.Windows.Forms.TextBox TxtCep;
-        private System.Windows.Forms.TextBox TxtEndereco;
-        private System.Windows.Forms.TextBox TxtNumero;
-        private System.Windows.Forms.TextBox TxtComplemento;
-        private System.Windows.Forms.TextBox TxtCidade;
-        private System.Windows.Forms.TextBox TxtUf;
+        private System.Windows.Forms.TextBox txtSite;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtRamoAtuacao;
+        private System.Windows.Forms.TextBox txtCnpj;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.TextBox txtNomeFantasia;
+        private System.Windows.Forms.TextBox txtInscricaoEstadual;
+        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.TextBox txtUf;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbPesquisarContato;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox TxtNome;
+        private System.Windows.Forms.TextBox txtNomeContato;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox TxtCargo;
+        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox TxtAniversario;
+        private System.Windows.Forms.TextBox txtAniversario;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox TxtDepartamento;
+        private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox TxtCelular1;
+        private System.Windows.Forms.TextBox txtCelular1;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox TxtCelular2;
+        private System.Windows.Forms.TextBox txtCelular2;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox TxtWhatsapp;
+        private System.Windows.Forms.TextBox txtWhatsapp;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox Contato;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox TxtObservacoes;
+        private System.Windows.Forms.RichTextBox txtHistorico;
         private System.Windows.Forms.Button BtnCadastrar;
         private System.Windows.Forms.Button BtnAtualizar;
         private Button BtnAddContato;
