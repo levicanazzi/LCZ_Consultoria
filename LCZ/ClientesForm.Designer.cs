@@ -95,6 +95,8 @@
             BtnCadastrar = new Button();
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
+            txtPesquisar = new TextBox();
+            btnPesquisar = new Button();
             Contato.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -252,10 +254,10 @@
             // cmbPesquisar
             // 
             cmbPesquisar.FormattingEnabled = true;
-            cmbPesquisar.Location = new Point(44, 67);
+            cmbPesquisar.Location = new Point(280, 67);
             cmbPesquisar.Margin = new Padding(4, 3, 4, 3);
             cmbPesquisar.Name = "cmbPesquisar";
-            cmbPesquisar.Size = new Size(331, 23);
+            cmbPesquisar.Size = new Size(133, 23);
             cmbPesquisar.TabIndex = 30;
             cmbPesquisar.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
@@ -655,6 +657,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnPesquisar);
+            groupBox1.Controls.Add(txtPesquisar);
             groupBox1.Controls.Add(cmbTipoCliente);
             groupBox1.Location = new Point(24, 28);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
@@ -705,6 +709,24 @@
             BtnExcluir.TabIndex = 76;
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // txtPesquisar
+            // 
+            txtPesquisar.Location = new Point(17, 40);
+            txtPesquisar.Margin = new Padding(4, 3, 4, 3);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.Size = new Size(149, 23);
+            txtPesquisar.TabIndex = 77;
+            // 
+            // btnPesquisar
+            // 
+            btnPesquisar.Location = new Point(173, 40);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(75, 22);
+            btnPesquisar.TabIndex = 78;
+            btnPesquisar.Text = "Buscar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // ClientesForm
             // 
@@ -775,6 +797,7 @@
             Load += ClientesForm_Load;
             Contato.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -847,5 +870,7 @@
         private ComboBox cmbContatoPara;
         private ComboBox cmbTipoContato;
         private ComboBox cmbTipoCliente;
+        private Button btnPesquisar;
+        private TextBox txtPesquisar;
     }
 }

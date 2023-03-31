@@ -60,7 +60,7 @@ namespace LCZ
 
         private void ClientesForm_Load(object sender, EventArgs e)
         {
-            CarregarComboBox();
+            //CarregarComboBox();
         }
         private void BtnAddContato_Click(object sender, EventArgs e)
         {
@@ -135,7 +135,9 @@ namespace LCZ
 
         private void CarregarComboBox()
         {
-            var clientes = _clienteRepo.GetAll();
+            string pesquisa = txtPesquisar.Text;
+
+            var clientes = _clienteRepo.GetAll(x => x.NomeFantasia.Contains(pesquisa));
 
             var bindingSource = new BindingSource();
             bindingSource.DataSource = clientes;
@@ -148,6 +150,11 @@ namespace LCZ
 
             cmbPesquisar.SelectedIndexChanged += new EventHandler(cmbClientes_SelectedIndexChanged);
 
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarComboBox();
         }
     }
 
