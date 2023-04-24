@@ -1,6 +1,5 @@
 ﻿using LCZ.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
 
 namespace LCZ.Infra.Repository.Data
 {
@@ -8,6 +7,7 @@ namespace LCZ.Infra.Repository.Data
     {
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<ContatoCliente> ContatosCliente { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -21,5 +21,6 @@ namespace LCZ.Infra.Repository.Data
                 .WithMany(cliente => cliente.ContatosCliente)
                 .HasForeignKey(contato => contato.IdCliente);
         }
+        
     }
 }

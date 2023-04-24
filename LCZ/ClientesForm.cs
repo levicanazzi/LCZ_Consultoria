@@ -192,6 +192,11 @@ namespace LCZ
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             CarregarComboBox();
+            var idCliente = int.Parse(cmbPesquisar.SelectedValue.ToString());
+            var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
+
+            var form = new FormPesquisa(cliente,_clienteRepo);
+            form.Show();
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)

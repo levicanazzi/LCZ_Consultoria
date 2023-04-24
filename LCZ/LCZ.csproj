@@ -27,4 +27,8 @@
     <ProjectReference Include="..\LCZ.Infra\LCZ.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
+
 </Project>
