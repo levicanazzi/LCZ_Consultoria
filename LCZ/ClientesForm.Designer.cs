@@ -46,7 +46,6 @@
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
-            cmbPesquisar = new ComboBox();
             txtSite = new TextBox();
             txtTelefone = new TextBox();
             txtRamoAtuacao = new TextBox();
@@ -97,6 +96,7 @@
             BtnCadastrar = new Button();
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
+            txtId = new TextBox();
             Contato.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -250,16 +250,6 @@
             label15.Size = new Size(24, 15);
             label15.TabIndex = 29;
             label15.Text = "UF:";
-            // 
-            // cmbPesquisar
-            // 
-            cmbPesquisar.FormattingEnabled = true;
-            cmbPesquisar.Location = new Point(280, 67);
-            cmbPesquisar.Margin = new Padding(4, 3, 4, 3);
-            cmbPesquisar.Name = "cmbPesquisar";
-            cmbPesquisar.Size = new Size(133, 23);
-            cmbPesquisar.TabIndex = 30;
-            cmbPesquisar.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
             // txtSite
             // 
@@ -644,7 +634,6 @@
             BtnAddContato.TabIndex = 76;
             BtnAddContato.Text = "Novo Contato";
             BtnAddContato.UseVisualStyleBackColor = true;
-            BtnAddContato.Click += BtnAddContato_Click;
             // 
             // txtHistorico
             // 
@@ -671,7 +660,7 @@
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Location = new Point(173, 40);
+            btnPesquisar.Location = new Point(281, 40);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(75, 22);
             btnPesquisar.TabIndex = 78;
@@ -684,7 +673,7 @@
             txtPesquisar.Location = new Point(17, 40);
             txtPesquisar.Margin = new Padding(4, 3, 4, 3);
             txtPesquisar.Name = "txtPesquisar";
-            txtPesquisar.Size = new Size(149, 23);
+            txtPesquisar.Size = new Size(245, 23);
             txtPesquisar.TabIndex = 77;
             // 
             // cmbTipoCliente
@@ -729,11 +718,20 @@
             BtnExcluir.UseVisualStyleBackColor = true;
             BtnExcluir.Click += BtnExcluir_Click;
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(12, -1);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(100, 23);
+            txtId.TabIndex = 77;
+            txtId.Visible = false;
+            // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 526);
+            Controls.Add(txtId);
             Controls.Add(BtnExcluir);
             Controls.Add(BtnAtualizar);
             Controls.Add(BtnCadastrar);
@@ -773,7 +771,6 @@
             Controls.Add(txtRamoAtuacao);
             Controls.Add(txtTelefone);
             Controls.Add(txtSite);
-            Controls.Add(cmbPesquisar);
             Controls.Add(label15);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -822,7 +819,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cmbPesquisar;
         private System.Windows.Forms.TextBox txtSite;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtRamoAtuacao;
@@ -873,5 +869,6 @@
         private ComboBox cmbTipoCliente;
         private Button btnPesquisar;
         private TextBox txtPesquisar;
+        private TextBox txtId;
     }
 }

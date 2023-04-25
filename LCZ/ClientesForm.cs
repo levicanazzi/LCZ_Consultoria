@@ -1,39 +1,48 @@
 ﻿using LCZ.Domain.Interfaces.IRepository;
 using LCZ.Domain.Models;
 using LCZ.Domain.Models.Enums;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading;
 
 namespace LCZ
 {
     public partial class ClientesForm : Form
     {
+        Thread td1;
         public List<ContatoCliente> _contatos { get; set; }
 
         IClienteRepository _clienteRepo;
         IContatoClienteRepository _contatoClienteRepo;
+        public Cliente Cliente { get; set; }
+
         public ClientesForm(IClienteRepository clienteRepo, IContatoClienteRepository contatoClienteRepo)
         {
             _contatos = new List<ContatoCliente>();
             _contatoClienteRepo = contatoClienteRepo;
             _clienteRepo = clienteRepo;
+
             InitializeComponent();
 
             cmbSexo.Items.AddRange(Enum.GetValues(typeof(SexoStatus)).Cast<object>().ToArray());
             cmbContatoPara.Items.AddRange(Enum.GetValues(typeof(ContatoParaStatus)).Cast<object>().ToArray());
             cmbTipoCliente.Items.AddRange(Enum.GetValues(typeof(TipoClienteStatus)).Cast<object>().ToArray());
             cmbTipoContato.Items.AddRange(Enum.GetValues(typeof(TipoContatoStatus)).Cast<object>().ToArray());
+        }
+
+        public ClientesForm(IClienteRepository clienteRepo, IContatoClienteRepository contatoClienteRepo, Cliente cliente)
+        {
+            _contatos = new List<ContatoCliente>();
+            _contatoClienteRepo = contatoClienteRepo;
+            _clienteRepo = clienteRepo;
+            Cliente = cliente;
+            InitializeComponent();
+
+            cmbSexo.Items.AddRange(Enum.GetValues(typeof(SexoStatus)).Cast<object>().ToArray());
+            cmbContatoPara.Items.AddRange(Enum.GetValues(typeof(ContatoParaStatus)).Cast<object>().ToArray());
+            cmbTipoCliente.Items.AddRange(Enum.GetValues(typeof(TipoClienteStatus)).Cast<object>().ToArray());
+            cmbTipoContato.Items.AddRange(Enum.GetValues(typeof(TipoContatoStatus)).Cast<object>().ToArray());
+
+            CompletarCampos(cliente);
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -60,13 +69,14 @@ namespace LCZ
             });
 
             _clienteRepo.Save();
+
             LimparCamposCliente();
         }
 
         private void LimparCamposCliente()
         {
+            txtId.Text = "";
             txtPesquisar.Text = "";
-            cmbPesquisar.SelectedIndex = -1;
             txtSite.Text = "";
             txtTelefone.Text = "";
             txtRamoAtuacao.Text = "";
@@ -84,75 +94,39 @@ namespace LCZ
         }
         private void ClientesForm_Load(object sender, EventArgs e)
         {
-            //CarregarComboBox();
-        }
-        private void BtnAddContato_Click(object sender, EventArgs e)
-        {
-            SexoStatus sexoStatus = (SexoStatus)cmbSexo.SelectedItem;
-            ContatoParaStatus contatoPara = (ContatoParaStatus)cmbContatoPara.SelectedItem;
-            TipoContatoStatus tipoContato = (TipoContatoStatus)cmbTipoContato.SelectedItem;
-
-            _contatoClienteRepo.Add(new ContatoCliente()
-            {
-                Nome = txtNomeContato.Text,
-                Cargo = txtCargo.Text,
-                Sexo = sexoStatus,
-                Aniversario = DateTime.Parse(txtAniversario.Text),
-                Celular1 = txtCelular1.Text,
-                Celular2 = txtCelular2.Text,
-                Whatsapp = txtWhatsapp.Text,
-                Email = txtEmail.Text,
-                Departamento = txtDepartamento.Text,
-                TipoContato = tipoContato,
-                ContatoPara = contatoPara,
-                Observacoes = txtHistorico.Text
-            });
-            _contatoClienteRepo.Save();
 
         }
 
-        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        //private void BtnAddContato_Click(object sender, EventArgs e)
+        //{
+        //    SexoStatus sexoStatus = (SexoStatus)cmbSexo.SelectedItem;
+        //    ContatoParaStatus contatoPara = (ContatoParaStatus)cmbContatoPara.SelectedItem;
+        //    TipoContatoStatus tipoContato = (TipoContatoStatus)cmbTipoContato.SelectedItem;
+
+        //    _contatoClienteRepo.Add(new ContatoCliente()
+        //    {
+        //        Nome = txtNomeContato.Text,
+        //        Cargo = txtCargo.Text,
+        //        Sexo = sexoStatus,
+        //        Aniversario = DateTime.Parse(txtAniversario.Text),
+        //        Celular1 = txtCelular1.Text,
+        //        Celular2 = txtCelular2.Text,
+        //        Whatsapp = txtWhatsapp.Text,
+        //        Email = txtEmail.Text,
+        //        Departamento = txtDepartamento.Text,
+        //        TipoContato = tipoContato,
+        //        ContatoPara = contatoPara,
+        //        Observacoes = txtHistorico.Text
+        //    });
+        //    _contatoClienteRepo.Save();
+
+        //}
+
+        private void CompletarCampos(Cliente cliente)
         {
-            //Id do cliente selecionado
-
-            if (cmbPesquisar.SelectedValue is not null)
-            {
-                AutoCompletarCampos();
-            }
-
-
-
-            //int cmbPrenchida = cmbPesquisar.SelectedIndex;
-            //if (cmbPrenchida != -1)
-            //{
-            //    using (SqlConnection connection = new SqlConnection("Server = localhost; Database = LCZ; Trusted_Connection = True;"))
-            //    {
-            //        connection.Open();
-            //        string sql = "SELECT Cep, Cnpj FROM Clientes WHERE Nome = @NomeSelecionado";
-            //        using (SqlCommand command = new SqlCommand(sql, connection))
-            //        {
-            //            command.Parameters.AddWithValue("@NomeSelecionado", cmbPesquisar.SelectedItem.ToString());
-            //            using (SqlDataReader reader = command.ExecuteReader())
-            //            {
-            //                if (reader.Read())
-            //                {
-            //                    TxtCep.Text = reader["Cep"].ToString();
-            //                    TxtCnpj.Text = reader["Cnpj"].ToString();
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-        }
-
-        private void AutoCompletarCampos()
-        {
-            var idCliente = int.Parse(cmbPesquisar.SelectedValue.ToString());
-
-            var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
-
             if (cliente != null)
             {
+                txtId.Text = (cliente.Id).ToString();
                 txtSite.Text = cliente.Site;
                 txtTelefone.Text = cliente.Telefone;
                 txtRamoAtuacao.Text = cliente.RamoAtuacao;
@@ -170,38 +144,25 @@ namespace LCZ
             }
         }
 
-        private void CarregarComboBox()
-        {
-            string pesquisa = txtPesquisar.Text;
-
-            var clientes = _clienteRepo.GetAll(x => x.NomeFantasia.Contains(pesquisa));
-
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = clientes;
-
-            cmbPesquisar.SelectedIndexChanged -= new EventHandler(cmbClientes_SelectedIndexChanged);
-
-            cmbPesquisar.DataSource = bindingSource.DataSource;
-            cmbPesquisar.DisplayMember = "NomeFantasia";
-            cmbPesquisar.ValueMember = "Id";
-
-            cmbPesquisar.SelectedIndexChanged += new EventHandler(cmbClientes_SelectedIndexChanged);
-
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            CarregarComboBox();
-            var idCliente = int.Parse(cmbPesquisar.SelectedValue.ToString());
-            var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
+            td1 = new Thread(AbrirJanelaPesquisa);
+            td1.SetApartmentState(ApartmentState.STA);
+            td1.Start();
+            this.Hide();
+        }
 
-            var form = new FormPesquisa(cliente,_clienteRepo);
-            form.Show();
+        public void AbrirJanelaPesquisa(object obj)
+        {
+            string pesquisa = txtPesquisar.Text;
+            var cliente = _clienteRepo.GetAll(x => x.NomeFantasia.Contains(pesquisa));
+
+            Application.Run(new FormPesquisa(cliente, _clienteRepo));
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            var idCliente = int.Parse(cmbPesquisar.SelectedValue.ToString());
+            var idCliente = int.Parse(txtId.Text);
 
             var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
 
