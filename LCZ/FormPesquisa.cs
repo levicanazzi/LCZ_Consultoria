@@ -25,7 +25,7 @@ namespace LCZ
             CarregarGrid();
         }
 
-        public void CarregarGrid()
+        private void CarregarGrid()
         {
             var cliente = this.Cliente;
 
@@ -50,26 +50,29 @@ namespace LCZ
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            td2 = new Thread(AbrirNovaJanela);
-            td2.SetApartmentState(ApartmentState.STA);
-            td2.Start();
-            this.Hide();
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Selecione um Cliente!");
+            }
+            else
+            {
+                td2 = new Thread(AbrirNovaJanela);
+                td2.SetApartmentState(ApartmentState.STA);
+                td2.Start();
+                this.Close();
+            }
         }
 
         private void gdvPesquisa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-            }
-            else
-            {
-                DataGridViewRow linha = gdvPesquisa.Rows[e.RowIndex];
 
-                txtId.Text = linha.Cells[0].Value.ToString();
-            }
+            DataGridViewRow linha = gdvPesquisa.Rows[e.RowIndex];
+            txtId.Text = linha.Cells[0].Value.ToString();
+
         }
-        public void AbrirNovaJanela(object obj)
+        private void AbrirNovaJanela(object obj)
         {
+
             var idCliente = int.Parse(txtId.Text);
             var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
 

@@ -706,6 +706,7 @@
             BtnAtualizar.TabIndex = 75;
             BtnAtualizar.Text = "Atualizar";
             BtnAtualizar.UseVisualStyleBackColor = true;
+            BtnAtualizar.Click += BtnAtualizar_Click;
             // 
             // BtnExcluir
             // 
