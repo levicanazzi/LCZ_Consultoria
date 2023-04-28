@@ -72,6 +72,7 @@
             Controls.Add(btnSelecionar);
             Controls.Add(gdvPesquisa);
             Name = "FormPesquisa";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pesquisa";
             Load += FormPesquisa_Load;
             ((System.ComponentModel.ISupportInitialize)gdvPesquisa).EndInit();

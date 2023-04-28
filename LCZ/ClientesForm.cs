@@ -21,7 +21,9 @@ namespace LCZ
             _contatoClienteRepo = contatoClienteRepo;
             _clienteRepo = clienteRepo;
 
+
             InitializeComponent();
+            CarregarComboBox();
         }
 
         public ClientesForm(IClienteRepository clienteRepo, IContatoClienteRepository contatoClienteRepo, Cliente cliente)
@@ -39,7 +41,7 @@ namespace LCZ
 
         private void ClientesForm_Load(object sender, EventArgs e)
         {
-            CarregarComboBox();
+
         }
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
@@ -75,22 +77,35 @@ namespace LCZ
 
             var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
 
-            //public static Cliente UpdateClientes(Cliente cliente)
-            //{
+            if (cliente == null)
+            {
+                MessageBox.Show("Não há cliente cadastrado no Banco.");
+            }
+            else
+            {
+                UpCliente(cliente);
+            }
+        }
 
-            //    cliente.Nome = ;
-            //    cliente.Sobrenome = clienteDto.Sobrenome;
-            //    cliente.Email = clienteDto.Email;
-            //    cliente.Endereco.Logradouro = clienteDto.Logradouro;
-            //    cliente.Endereco.Numero = clienteDto.Numero;
-            //    cliente.Endereco.Cep = clienteDto.Cep;
-            //    cliente.Endereco.Municipio = clienteDto.Municipio;
-            //    cliente.Endereco.Estado = clienteDto.Estado;
+        private void UpCliente(Cliente cliente)
+        {
+            cliente.Site = txtSite.Text;
+            cliente.Telefone = txtTelefone.Text;
+            cliente.RamoAtuacao = txtRamoAtuacao.Text;
+            cliente.Cnpj = txtCnpj.Text;
+            cliente.RazaoSocial = txtRazaoSocial.Text;
+            cliente.NomeFantasia = txtNomeFantasia.Text;
+            cliente.InscricaoEstadual = txtInscricaoEstadual.Text;
+            cliente.TipoCliente = (TipoClienteStatus)cmbTipoCliente.SelectedItem;
+            cliente.Cep = txtCep.Text;
+            cliente.Endereco = txtEndereco.Text;
+            cliente.Numero = txtNumero.Text;
+            cliente.Complemento = txtComplemento.Text;
+            cliente.Cidade = txtCidade.Text;
+            cliente.Uf = txtUf.Text;
 
-            //    return cliente;
-            //}
-
-            LimparCamposCliente();
+            _clienteRepo.Save();
+            CompletarCampos(cliente);
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
@@ -99,10 +114,16 @@ namespace LCZ
 
             var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
 
-            _clienteRepo.Remove(cliente);
-            _clienteRepo.Save();
-
-            LimparCamposCliente();
+            if (MessageBox.Show($"Deseja excluir o cliente {cliente.NomeFantasia}?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                _clienteRepo.Remove(cliente);
+                _clienteRepo.Save();
+                LimparCamposCliente();
+            }
+            else
+            {
+                //return;
+            }
         }
 
         //private void BtnAddContato_Click(object sender, EventArgs e)
@@ -154,9 +175,13 @@ namespace LCZ
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (txtPesquisar.Text == "")
+            string pesquisa = txtPesquisar.Text;
+            var cliente = _clienteRepo.GetAll(x => x.NomeFantasia.Contains(pesquisa)).ToList();
+
+            if (cliente == null || txtPesquisar.Text == "")
             {
                 MessageBox.Show("Não foi encontrado nenhum resultado na pesquisa.");
+
             }
             else
             {
@@ -176,9 +201,9 @@ namespace LCZ
                 MessageBox.Show("Não foi encontrado nenhum resultado na pesquisa.");
             }
             else
-            {
+            {                
                 Application.Run(new FormPesquisa(cliente, _clienteRepo));
-            }                       
+            }
         }
 
         private void LimparCamposCliente()
@@ -207,6 +232,19 @@ namespace LCZ
             cmbContatoPara.Items.AddRange(Enum.GetValues(typeof(ContatoParaStatus)).Cast<object>().ToArray());
             cmbTipoCliente.Items.AddRange(Enum.GetValues(typeof(TipoClienteStatus)).Cast<object>().ToArray());
             cmbTipoContato.Items.AddRange(Enum.GetValues(typeof(TipoContatoStatus)).Cast<object>().ToArray());
+        }
+
+        private void ClientesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja Encerrar a Aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+
+                System.Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 

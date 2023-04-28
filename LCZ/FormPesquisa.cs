@@ -76,6 +76,7 @@ namespace LCZ
             var idCliente = int.Parse(txtId.Text);
             var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
 
+
             Application.Run(new ClientesForm(_clienteRepo, _contatoClienteRepo, cliente));
         }
     }

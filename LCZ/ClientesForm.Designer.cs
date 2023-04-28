@@ -793,6 +793,7 @@
             Name = "ClientesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
+            FormClosing += ClientesForm_FormClosing;
             Load += ClientesForm_Load;
             Contato.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
