@@ -52,7 +52,7 @@
             txtCnpj = new TextBox();
             txtRazaoSocial = new TextBox();
             txtNomeFantasia = new TextBox();
-            txtInscricaoEstadual = new TextBox();
+            txtSituacaoCadastral = new TextBox();
             txtEndereco = new TextBox();
             txtNumero = new TextBox();
             txtComplemento = new TextBox();
@@ -167,9 +167,9 @@
             label7.Location = new Point(621, 110);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(104, 15);
+            label7.Size = new Size(107, 15);
             label7.TabIndex = 12;
-            label7.Text = "Inscrição Estadual:";
+            label7.Text = "Situação Cadastral:";
             // 
             // label8
             // 
@@ -282,6 +282,7 @@
             txtCnpj.Name = "txtCnpj";
             txtCnpj.Size = new Size(125, 23);
             txtCnpj.TabIndex = 34;
+            txtCnpj.Leave += txtCnpj_Leave;
             // 
             // txtRazaoSocial
             // 
@@ -299,13 +300,13 @@
             txtNomeFantasia.Size = new Size(166, 23);
             txtNomeFantasia.TabIndex = 36;
             // 
-            // txtInscricaoEstadual
+            // txtSituacaoCadastral
             // 
-            txtInscricaoEstadual.Location = new Point(621, 128);
-            txtInscricaoEstadual.Margin = new Padding(4, 3, 4, 3);
-            txtInscricaoEstadual.Name = "txtInscricaoEstadual";
-            txtInscricaoEstadual.Size = new Size(119, 23);
-            txtInscricaoEstadual.TabIndex = 37;
+            txtSituacaoCadastral.Location = new Point(621, 128);
+            txtSituacaoCadastral.Margin = new Padding(4, 3, 4, 3);
+            txtSituacaoCadastral.Name = "txtSituacaoCadastral";
+            txtSituacaoCadastral.Size = new Size(119, 23);
+            txtSituacaoCadastral.TabIndex = 37;
             // 
             // txtEndereco
             // 
@@ -659,7 +660,7 @@
             txtCep.Name = "txtCep";
             txtCep.Size = new Size(125, 23);
             txtCep.TabIndex = 81;
-            txtCep.Leave += txtCep_Leave;
+            txtCep.KeyDown += txtCep_KeyDown;
             // 
             // btnPesquisar
             // 
@@ -767,7 +768,7 @@
             Controls.Add(txtComplemento);
             Controls.Add(txtNumero);
             Controls.Add(txtEndereco);
-            Controls.Add(txtInscricaoEstadual);
+            Controls.Add(txtSituacaoCadastral);
             Controls.Add(txtNomeFantasia);
             Controls.Add(txtRazaoSocial);
             Controls.Add(txtCnpj);
@@ -829,7 +830,7 @@
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.TextBox txtNomeFantasia;
-        private System.Windows.Forms.TextBox txtInscricaoEstadual;
+        private System.Windows.Forms.TextBox txtSituacaoCadastral;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;

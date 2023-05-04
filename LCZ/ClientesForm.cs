@@ -58,7 +58,7 @@ namespace LCZ
                 RamoAtuacao = txtRamoAtuacao.Text,
                 RazaoSocial = txtRazaoSocial.Text,
                 NomeFantasia = txtNomeFantasia.Text,
-                InscricaoEstadual = txtInscricaoEstadual.Text,
+                SituacaoCadastral = txtSituacaoCadastral.Text,
                 TipoCliente = tipoCliente,
                 Cep = txtCep.Text,
                 Endereco = txtEndereco.Text,
@@ -98,7 +98,7 @@ namespace LCZ
             cliente.Cnpj = txtCnpj.Text;
             cliente.RazaoSocial = txtRazaoSocial.Text;
             cliente.NomeFantasia = txtNomeFantasia.Text;
-            cliente.InscricaoEstadual = txtInscricaoEstadual.Text;
+            cliente.SituacaoCadastral = txtSituacaoCadastral.Text;
             cliente.TipoCliente = (TipoClienteStatus)cmbTipoCliente.SelectedItem;
             cliente.Cep = txtCep.Text;
             cliente.Endereco = txtEndereco.Text;
@@ -197,7 +197,7 @@ namespace LCZ
                 txtCnpj.Text = cliente.Cnpj;
                 txtRazaoSocial.Text = cliente.RazaoSocial;
                 txtNomeFantasia.Text = cliente.NomeFantasia;
-                txtInscricaoEstadual.Text = cliente.InscricaoEstadual;
+                txtSituacaoCadastral.Text = cliente.SituacaoCadastral;
                 cmbTipoCliente.Text = cliente.TipoCliente.ToString();
                 txtCep.Text = cliente.Cep;
                 txtEndereco.Text = cliente.Endereco;
@@ -251,7 +251,7 @@ namespace LCZ
             txtCnpj.Text = "";
             txtRazaoSocial.Text = "";
             txtNomeFantasia.Text = "";
-            txtInscricaoEstadual.Text = "";
+            txtSituacaoCadastral.Text = "";
             cmbTipoCliente.SelectedIndex = -1;
             txtCep.Text = "";
             txtEndereco.Text = "";
@@ -282,9 +282,12 @@ namespace LCZ
             }
         }
 
-        private void txtCep_Leave(object sender, EventArgs e)
+        private void txtCep_KeyDown(object sender, KeyEventArgs e)
         {
-            BuscarCep(txtCep.Text);
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscarCep(txtCep.Text);
+            }
         }
 
         async Task BuscarCep(string cep)
@@ -305,7 +308,45 @@ namespace LCZ
                 MessageBox.Show("Falha! \n" + e);
             }
         }
-    }
 
+        private void txtCnpj_Leave(object sender, EventArgs e)
+        {
+            BuscarCnpj(txtCnpj.Text);
+        }
+
+        async Task BuscarCnpj(string cnpj)
+        {
+            try
+            {
+                var receitaWSApi = RestService.For<IReceitaWSApi>("https://www.receitaws.com.br/v1/cnpj/");
+
+                var cnpjResponse = await receitaWSApi.GetCnpjAsync(cnpj);
+
+
+                txtSite.Text = cnpjResponse.Site;
+                txtTelefone.Text = cnpjResponse.Telefone;
+                txtSituacaoCadastral.Text = cnpjResponse.Situacao;
+                txtCnpj.Text = cnpjResponse.Cnpj;
+                txtNomeFantasia.Text = cnpjResponse.Fantasia;
+                txtRazaoSocial.Text = cnpjResponse.Nome;
+                txtCep.Text = cnpjResponse.Cep;
+                txtEndereco.Text = cnpjResponse.Logradouro;
+                txtNumero.Text = cnpjResponse.Numero;
+                txtCidade.Text = cnpjResponse.Municipio;
+                txtComplemento.Text = cnpjResponse.Complemento;
+                txtUf.Text = cnpjResponse.Uf;
+
+                if (cnpjResponse.Situacao == "ATIVA")
+                {
+                    cmbTipoCliente.SelectedIndex = 0;
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Falha! \n" + e);
+            }
+        }
+    }
 }
 
