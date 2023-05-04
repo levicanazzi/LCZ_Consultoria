@@ -55,7 +55,7 @@ namespace LCZ
                 Cnpj = txtCnpj.Text,
                 Site = txtSite.Text,
                 Telefone = txtTelefone.Text,
-                RamoAtuacao = txtRamoAtuacao.Text,
+                EmailCliente = txtEmailCliente.Text,
                 RazaoSocial = txtRazaoSocial.Text,
                 NomeFantasia = txtNomeFantasia.Text,
                 SituacaoCadastral = txtSituacaoCadastral.Text,
@@ -63,6 +63,7 @@ namespace LCZ
                 Cep = txtCep.Text,
                 Endereco = txtEndereco.Text,
                 Numero = txtNumero.Text,
+                Bairro = txtBairro.Text,
                 Complemento = txtComplemento.Text,
                 Cidade = txtCidade.Text,
                 Uf = txtUf.Text,
@@ -94,7 +95,7 @@ namespace LCZ
         {
             cliente.Site = txtSite.Text;
             cliente.Telefone = txtTelefone.Text;
-            cliente.RamoAtuacao = txtRamoAtuacao.Text;
+            cliente.EmailCliente = txtEmailCliente.Text;
             cliente.Cnpj = txtCnpj.Text;
             cliente.RazaoSocial = txtRazaoSocial.Text;
             cliente.NomeFantasia = txtNomeFantasia.Text;
@@ -103,6 +104,7 @@ namespace LCZ
             cliente.Cep = txtCep.Text;
             cliente.Endereco = txtEndereco.Text;
             cliente.Numero = txtNumero.Text;
+            cliente.Bairro = txtBairro.Text;
             cliente.Complemento = txtComplemento.Text;
             cliente.Cidade = txtCidade.Text;
             cliente.Uf = txtUf.Text;
@@ -193,7 +195,7 @@ namespace LCZ
                 txtId.Text = (cliente.Id).ToString();
                 txtSite.Text = cliente.Site;
                 txtTelefone.Text = cliente.Telefone;
-                txtRamoAtuacao.Text = cliente.RamoAtuacao;
+                txtEmailCliente.Text = cliente.EmailCliente;
                 txtCnpj.Text = cliente.Cnpj;
                 txtRazaoSocial.Text = cliente.RazaoSocial;
                 txtNomeFantasia.Text = cliente.NomeFantasia;
@@ -202,6 +204,7 @@ namespace LCZ
                 txtCep.Text = cliente.Cep;
                 txtEndereco.Text = cliente.Endereco;
                 txtNumero.Text = cliente.Numero;
+                txtBairro.Text = cliente.Bairro;
                 txtComplemento.Text = cliente.Complemento;
                 txtCidade.Text = cliente.Cidade;
                 txtUf.Text = cliente.Uf;
@@ -247,7 +250,7 @@ namespace LCZ
             txtPesquisar.Text = "";
             txtSite.Text = "";
             txtTelefone.Text = "";
-            txtRamoAtuacao.Text = "";
+            txtEmailCliente.Text = "";
             txtCnpj.Text = "";
             txtRazaoSocial.Text = "";
             txtNomeFantasia.Text = "";
@@ -256,6 +259,7 @@ namespace LCZ
             txtCep.Text = "";
             txtEndereco.Text = "";
             txtNumero.Text = "";
+            txtBairro.Text = "";
             txtComplemento.Text = "";
             txtCidade.Text = "";
             txtUf.Text = "";
@@ -300,6 +304,7 @@ namespace LCZ
 
                 txtEndereco.Text = endereco.Logradouro;
                 txtCidade.Text = endereco.Localidade;
+                txtBairro.Text = endereco.Bairro;
                 txtComplemento.Text = endereco.Complemento;
                 txtUf.Text = endereco.Uf;
             }
@@ -307,11 +312,6 @@ namespace LCZ
             {
                 MessageBox.Show("Falha! \n" + e);
             }
-        }
-
-        private void txtCnpj_Leave(object sender, EventArgs e)
-        {
-            BuscarCnpj(txtCnpj.Text);
         }
 
         async Task BuscarCnpj(string cnpj)
@@ -325,6 +325,7 @@ namespace LCZ
 
                 txtSite.Text = cnpjResponse.Site;
                 txtTelefone.Text = cnpjResponse.Telefone;
+                txtEmailCliente.Text = cnpjResponse.Email;
                 txtSituacaoCadastral.Text = cnpjResponse.Situacao;
                 txtCnpj.Text = cnpjResponse.Cnpj;
                 txtNomeFantasia.Text = cnpjResponse.Fantasia;
@@ -332,19 +333,23 @@ namespace LCZ
                 txtCep.Text = cnpjResponse.Cep;
                 txtEndereco.Text = cnpjResponse.Logradouro;
                 txtNumero.Text = cnpjResponse.Numero;
+                txtBairro.Text = cnpjResponse.Bairro;
                 txtCidade.Text = cnpjResponse.Municipio;
                 txtComplemento.Text = cnpjResponse.Complemento;
                 txtUf.Text = cnpjResponse.Uf;
-
-                if (cnpjResponse.Situacao == "ATIVA")
-                {
-                    cmbTipoCliente.SelectedIndex = 0;
-                }
 
             }
             catch (Exception e)
             {
                 MessageBox.Show("Falha! \n" + e);
+            }
+        }
+
+        private void txtCnpj_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscarCnpj(txtCnpj.Text);
             }
         }
     }

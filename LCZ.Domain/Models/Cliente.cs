@@ -16,7 +16,7 @@ namespace LCZ.Domain.Models
         public string Cnpj { get; set; }
         public string Site { get; set; }
         public string Telefone { get; set; }
-        public string RamoAtuacao { get; set; }
+        public string EmailCliente { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
         public string SituacaoCadastral { get; set; }
@@ -24,6 +24,7 @@ namespace LCZ.Domain.Models
         public string Cep { get; set; }
         public string Endereco { get; set; }
         public string Numero { get; set; }
+        public string Bairro { get; set; }
         public string Complemento { get; set; }
         public string Cidade { get; set; }
         public string Uf { get; set; }
@@ -34,7 +35,7 @@ namespace LCZ.Domain.Models
         }
         public Cliente(string cnpj, string razaoSocial, string nomeFantasia,
             string inscricaoEstadual, TipoClienteStatus tipoCliente, string cep, string endereco,
-            string numero, string complemento, string cidade, string uf, List<ContatoCliente> contatos)
+            string numero, string bairro, string complemento, string cidade, string uf, List<ContatoCliente> contatos)
         {
             Cnpj = cnpj;
             RazaoSocial = razaoSocial;
@@ -44,6 +45,7 @@ namespace LCZ.Domain.Models
             Cep = cep;
             Endereco = endereco;
             Numero = numero;
+            Bairro = bairro;
             Complemento = complemento;
             Cidade = cidade;
             Uf = uf;

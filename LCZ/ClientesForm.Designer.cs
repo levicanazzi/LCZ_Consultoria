@@ -48,7 +48,7 @@
             label15 = new Label();
             txtSite = new TextBox();
             txtTelefone = new TextBox();
-            txtRamoAtuacao = new TextBox();
+            txtEmailCliente = new TextBox();
             txtCnpj = new TextBox();
             txtRazaoSocial = new TextBox();
             txtNomeFantasia = new TextBox();
@@ -97,6 +97,8 @@
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
             txtId = new TextBox();
+            label29 = new Label();
+            txtBairro = new TextBox();
             Contato.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -187,9 +189,9 @@
             label9.Location = new Point(757, 48);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(102, 15);
+            label9.Size = new Size(39, 15);
             label9.TabIndex = 17;
-            label9.Text = "Ramo de atuação:";
+            label9.Text = "Email:";
             // 
             // label10
             // 
@@ -214,7 +216,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(418, 171);
+            label12.Location = new Point(359, 143);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(54, 15);
@@ -224,7 +226,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(502, 171);
+            label13.Location = new Point(552, 143);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(87, 15);
@@ -234,7 +236,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(691, 171);
+            label14.Location = new Point(685, 143);
             label14.Margin = new Padding(4, 0, 4, 0);
             label14.Name = "label14";
             label14.Size = new Size(47, 15);
@@ -267,13 +269,13 @@
             txtTelefone.Size = new Size(112, 23);
             txtTelefone.TabIndex = 32;
             // 
-            // txtRamoAtuacao
+            // txtEmailCliente
             // 
-            txtRamoAtuacao.Location = new Point(761, 68);
-            txtRamoAtuacao.Margin = new Padding(4, 3, 4, 3);
-            txtRamoAtuacao.Name = "txtRamoAtuacao";
-            txtRamoAtuacao.Size = new Size(122, 23);
-            txtRamoAtuacao.TabIndex = 33;
+            txtEmailCliente.Location = new Point(761, 68);
+            txtEmailCliente.Margin = new Padding(4, 3, 4, 3);
+            txtEmailCliente.Name = "txtEmailCliente";
+            txtEmailCliente.Size = new Size(122, 23);
+            txtEmailCliente.TabIndex = 33;
             // 
             // txtCnpj
             // 
@@ -282,7 +284,7 @@
             txtCnpj.Name = "txtCnpj";
             txtCnpj.Size = new Size(125, 23);
             txtCnpj.TabIndex = 34;
-            txtCnpj.Leave += txtCnpj_Leave;
+            txtCnpj.KeyDown += txtCnpj_KeyDown;
             // 
             // txtRazaoSocial
             // 
@@ -310,31 +312,31 @@
             // 
             // txtEndereco
             // 
-            txtEndereco.Location = new Point(191, 189);
+            txtEndereco.Location = new Point(167, 161);
             txtEndereco.Margin = new Padding(4, 3, 4, 3);
             txtEndereco.Name = "txtEndereco";
-            txtEndereco.Size = new Size(222, 23);
+            txtEndereco.Size = new Size(184, 23);
             txtEndereco.TabIndex = 40;
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(421, 189);
+            txtNumero.Location = new Point(359, 161);
             txtNumero.Margin = new Padding(4, 3, 4, 3);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(51, 23);
+            txtNumero.Size = new Size(54, 23);
             txtNumero.TabIndex = 41;
             // 
             // txtComplemento
             // 
-            txtComplemento.Location = new Point(507, 189);
+            txtComplemento.Location = new Point(552, 161);
             txtComplemento.Margin = new Padding(4, 3, 4, 3);
             txtComplemento.Name = "txtComplemento";
-            txtComplemento.Size = new Size(156, 23);
+            txtComplemento.Size = new Size(123, 23);
             txtComplemento.TabIndex = 42;
             // 
             // txtCidade
             // 
-            txtCidade.Location = new Point(694, 189);
+            txtCidade.Location = new Point(685, 161);
             txtCidade.Margin = new Padding(4, 3, 4, 3);
             txtCidade.Name = "txtCidade";
             txtCidade.Size = new Size(128, 23);
@@ -640,10 +642,19 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtBairro);
+            groupBox1.Controls.Add(label29);
             groupBox1.Controls.Add(txtCep);
             groupBox1.Controls.Add(btnPesquisar);
             groupBox1.Controls.Add(txtPesquisar);
             groupBox1.Controls.Add(cmbTipoCliente);
+            groupBox1.Controls.Add(txtNumero);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(txtComplemento);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(txtEndereco);
+            groupBox1.Controls.Add(txtCidade);
+            groupBox1.Controls.Add(label14);
             groupBox1.Location = new Point(24, 28);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
@@ -731,6 +742,22 @@
             txtId.TabIndex = 77;
             txtId.Visible = false;
             // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(433, 143);
+            label29.Name = "label29";
+            label29.Size = new Size(41, 15);
+            label29.TabIndex = 82;
+            label29.Text = "Bairro:";
+            // 
+            // txtBairro
+            // 
+            txtBairro.Location = new Point(435, 161);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(110, 23);
+            txtBairro.TabIndex = 83;
+            // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -764,21 +791,14 @@
             Controls.Add(cmbPesquisarContato);
             Controls.Add(label16);
             Controls.Add(txtUf);
-            Controls.Add(txtCidade);
-            Controls.Add(txtComplemento);
-            Controls.Add(txtNumero);
-            Controls.Add(txtEndereco);
             Controls.Add(txtSituacaoCadastral);
             Controls.Add(txtNomeFantasia);
             Controls.Add(txtRazaoSocial);
             Controls.Add(txtCnpj);
-            Controls.Add(txtRamoAtuacao);
+            Controls.Add(txtEmailCliente);
             Controls.Add(txtTelefone);
             Controls.Add(txtSite);
             Controls.Add(label15);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -826,7 +846,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSite;
         private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtRamoAtuacao;
+        private System.Windows.Forms.TextBox txtEmailCliente;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.TextBox txtNomeFantasia;
@@ -875,5 +895,7 @@
         private TextBox txtPesquisar;
         private TextBox txtId;
         private MaskedTextBox txtCep;
+        private TextBox txtBairro;
+        private Label label29;
     }
 }
