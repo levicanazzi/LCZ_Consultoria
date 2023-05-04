@@ -53,7 +53,6 @@
             txtRazaoSocial = new TextBox();
             txtNomeFantasia = new TextBox();
             txtInscricaoEstadual = new TextBox();
-            txtCep = new TextBox();
             txtEndereco = new TextBox();
             txtNumero = new TextBox();
             txtComplemento = new TextBox();
@@ -90,6 +89,7 @@
             BtnAddContato = new Button();
             txtHistorico = new RichTextBox();
             groupBox1 = new GroupBox();
+            txtCep = new MaskedTextBox();
             btnPesquisar = new Button();
             txtPesquisar = new TextBox();
             cmbTipoCliente = new ComboBox();
@@ -306,14 +306,6 @@
             txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             txtInscricaoEstadual.Size = new Size(119, 23);
             txtInscricaoEstadual.TabIndex = 37;
-            // 
-            // txtCep
-            // 
-            txtCep.Location = new Point(44, 189);
-            txtCep.Margin = new Padding(4, 3, 4, 3);
-            txtCep.Name = "txtCep";
-            txtCep.Size = new Size(125, 23);
-            txtCep.TabIndex = 39;
             // 
             // txtEndereco
             // 
@@ -634,6 +626,7 @@
             BtnAddContato.TabIndex = 76;
             BtnAddContato.Text = "Novo Contato";
             BtnAddContato.UseVisualStyleBackColor = true;
+            BtnAddContato.Click += BtnAddContato_Click;
             // 
             // txtHistorico
             // 
@@ -646,6 +639,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtCep);
             groupBox1.Controls.Add(btnPesquisar);
             groupBox1.Controls.Add(txtPesquisar);
             groupBox1.Controls.Add(cmbTipoCliente);
@@ -657,6 +651,15 @@
             groupBox1.TabIndex = 71;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
+            // 
+            // txtCep
+            // 
+            txtCep.Location = new Point(20, 161);
+            txtCep.Mask = "00000-000";
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(125, 23);
+            txtCep.TabIndex = 81;
+            txtCep.Leave += txtCep_Leave;
             // 
             // btnPesquisar
             // 
@@ -764,7 +767,6 @@
             Controls.Add(txtComplemento);
             Controls.Add(txtNumero);
             Controls.Add(txtEndereco);
-            Controls.Add(txtCep);
             Controls.Add(txtInscricaoEstadual);
             Controls.Add(txtNomeFantasia);
             Controls.Add(txtRazaoSocial);
@@ -828,7 +830,6 @@
         private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.TextBox txtNomeFantasia;
         private System.Windows.Forms.TextBox txtInscricaoEstadual;
-        private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtComplemento;
@@ -872,5 +873,6 @@
         private Button btnPesquisar;
         private TextBox txtPesquisar;
         private TextBox txtId;
+        private MaskedTextBox txtCep;
     }
 }

@@ -23,13 +23,12 @@ namespace LCZ.Domain.Models
         public int IdCliente { get; set; }
         public ContatoCliente()
         {
-            
+
         }
-        public ContatoCliente(int id, string nome, string cargo, SexoStatus sexo, 
-            DateTime aniversario, string departamento, string celular1, string celular2, 
-            string whatsapp, string email, TipoContatoStatus tipoContato, ContatoParaStatus contatoPara, string observacoes, int idCliente)
+        public ContatoCliente(string nome, string cargo, SexoStatus sexo,
+            DateTime aniversario, string departamento, string celular1, string celular2,
+            string whatsapp, string email, TipoContatoStatus tipoContato, ContatoParaStatus contatoPara, Cliente cliente, int idCliente)
         {
-            Id = id;
             Nome = nome;
             Cargo = cargo;
             Sexo = sexo;
@@ -41,7 +40,7 @@ namespace LCZ.Domain.Models
             Email = email;
             TipoContato = tipoContato;
             ContatoPara = contatoPara;
-            Observacoes = observacoes;
+            Cliente = cliente;
             IdCliente = idCliente;
         }
     }

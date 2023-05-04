@@ -1,6 +1,9 @@
-﻿using LCZ.Domain.Interfaces.IRepository;
+﻿using LCZ.Domain.Interfaces;
+using LCZ.Domain.Interfaces.IRepository;
 using LCZ.Domain.Models;
 using LCZ.Domain.Models.Enums;
+using LCZ.Entities;
+using Refit;
 using System.Data;
 using System.Threading;
 
@@ -111,45 +114,77 @@ namespace LCZ
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             var idCliente = int.Parse(txtId.Text);
-
-            var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
-
-            if (MessageBox.Show($"Deseja excluir o cliente {cliente.NomeFantasia}?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (idCliente == null)
             {
-                _clienteRepo.Remove(cliente);
-                _clienteRepo.Save();
-                LimparCamposCliente();
+                MessageBox.Show("Nenhum cliente selecionado!");
+            }
+            else if (idCliente != null)
+            {
+                var cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
+
+                if (MessageBox.Show($"Deseja excluir o cliente {cliente.NomeFantasia}?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    _clienteRepo.Remove(cliente);
+                    _clienteRepo.Save();
+                    LimparCamposCliente();
+                }
+            }
+        }
+        private void BtnAddContato_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Nenhum cliente selecionado!");
             }
             else
             {
-                //return;
+
+                var idCliente = int.Parse(txtId.Text);
+
+                if (idCliente == null)
+                {
+                    MessageBox.Show("Nenhum cliente selecionado!");
+                }
+                else if (idCliente != null)
+                {
+                    var cliente = new Cliente();
+
+                    cliente = _clienteRepo.FirstOrDefault(x => x.Id == idCliente);
+
+                    if (cliente != null)
+                    {
+                        SexoStatus sexoStatus = (SexoStatus)cmbSexo.SelectedItem;
+                        ContatoParaStatus contatoPara = (ContatoParaStatus)cmbContatoPara.SelectedItem;
+                        TipoContatoStatus tipoContato = (TipoContatoStatus)cmbTipoContato.SelectedItem;
+
+                        var contatoCliente = new ContatoCliente()
+                        {
+                            Nome = txtNomeContato.Text,
+                            Cargo = txtCargo.Text,
+                            Sexo = sexoStatus,
+                            Aniversario = DateTime.Parse(txtAniversario.Text),
+                            Celular1 = txtCelular1.Text,
+                            Celular2 = txtCelular2.Text,
+                            Whatsapp = txtWhatsapp.Text,
+                            Email = txtEmail.Text,
+                            Departamento = txtDepartamento.Text,
+                            TipoContato = tipoContato,
+                            ContatoPara = contatoPara,
+                            Observacoes = txtHistorico.Text,
+                            Cliente = cliente,
+                            IdCliente = idCliente
+                        };
+
+                        _contatoClienteRepo.Add(contatoCliente);
+                        _contatoClienteRepo.Save();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é possivel adicionar um contato sem um cliente selecionado.");
+                    }
+                }
             }
         }
-
-        //private void BtnAddContato_Click(object sender, EventArgs e)
-        //{
-        //    SexoStatus sexoStatus = (SexoStatus)cmbSexo.SelectedItem;
-        //    ContatoParaStatus contatoPara = (ContatoParaStatus)cmbContatoPara.SelectedItem;
-        //    TipoContatoStatus tipoContato = (TipoContatoStatus)cmbTipoContato.SelectedItem;
-
-        //    _contatoClienteRepo.Add(new ContatoCliente()
-        //    {
-        //        Nome = txtNomeContato.Text,
-        //        Cargo = txtCargo.Text,
-        //        Sexo = sexoStatus,
-        //        Aniversario = DateTime.Parse(txtAniversario.Text),
-        //        Celular1 = txtCelular1.Text,
-        //        Celular2 = txtCelular2.Text,
-        //        Whatsapp = txtWhatsapp.Text,
-        //        Email = txtEmail.Text,
-        //        Departamento = txtDepartamento.Text,
-        //        TipoContato = tipoContato,
-        //        ContatoPara = contatoPara,
-        //        Observacoes = txtHistorico.Text
-        //    });
-        //    _contatoClienteRepo.Save();
-
-        //}
 
         private void CompletarCampos(Cliente cliente)
         {
@@ -201,8 +236,8 @@ namespace LCZ
                 MessageBox.Show("Não foi encontrado nenhum resultado na pesquisa.");
             }
             else
-            {                
-                Application.Run(new FormPesquisa(cliente, _clienteRepo));
+            {
+                Application.Run(new FormPesquisa(cliente, _clienteRepo, _contatoClienteRepo));
             }
         }
 
@@ -244,6 +279,30 @@ namespace LCZ
             else
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            BuscarCep(txtCep.Text);
+        }
+
+        async Task BuscarCep(string cep)
+        {
+            try
+            {
+                var cepBuscar = RestService.For<ICepApiService>("https://viacep.com.br/");
+
+                var endereco = await cepBuscar.GetAddressAsync(cep);
+
+                txtEndereco.Text = endereco.Logradouro;
+                txtCidade.Text = endereco.Localidade;
+                txtComplemento.Text = endereco.Complemento;
+                txtUf.Text = endereco.Uf;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Falha! \n" + e);
             }
         }
     }

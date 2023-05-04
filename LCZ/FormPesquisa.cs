@@ -13,11 +13,12 @@ namespace LCZ
         IContatoClienteRepository _contatoClienteRepo;
 
 
-        public FormPesquisa(IEnumerable<Cliente> cliente, IClienteRepository clienteRepo)
+        public FormPesquisa(IEnumerable<Cliente> cliente, IClienteRepository clienteRepo, IContatoClienteRepository contatoClienteRepo)
         {
             InitializeComponent();
             Cliente = cliente;
             _clienteRepo = clienteRepo;
+            _contatoClienteRepo = contatoClienteRepo;
         }
 
         private void FormPesquisa_Load(object sender, EventArgs e)

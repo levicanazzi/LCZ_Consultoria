@@ -1,0 +1,23 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, WsCep"
+    ],
+    "references": [
+      "Refit, {Refit, 6.3.2}",
+      "System.Net.Http.Json, {System.Net.Http.Json, 6.0.0}",
+      "System.Runtime.CompilerServices.Unsafe, {System.Runtime.CompilerServices.Unsafe, 6.0.0}",
+      "System.Text.Encodings.Web, {System.Text.Encodings.Web, 6.0.0}",
+      "System.Text.Json, {System.Text.Json, 6.0.0}"
+    ],
+    "targetFramework": "net6.0",
+    "typeReuseMode": "All"
+  }
+}
