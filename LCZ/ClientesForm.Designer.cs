@@ -82,6 +82,7 @@
             label27 = new Label();
             label28 = new Label();
             Contato = new GroupBox();
+            txtIdContato = new TextBox();
             cmbContatoPara = new ComboBox();
             cmbTipoContato = new ComboBox();
             BtnDeleteContato = new Button();
@@ -89,6 +90,8 @@
             BtnAddContato = new Button();
             txtHistorico = new RichTextBox();
             groupBox1 = new GroupBox();
+            txtBairro = new TextBox();
+            label29 = new Label();
             txtCep = new MaskedTextBox();
             btnPesquisar = new Button();
             txtPesquisar = new TextBox();
@@ -97,8 +100,6 @@
             BtnAtualizar = new Button();
             BtnExcluir = new Button();
             txtId = new TextBox();
-            label29 = new Label();
-            txtBairro = new TextBox();
             Contato.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -368,6 +369,7 @@
             cmbPesquisarContato.Name = "cmbPesquisarContato";
             cmbPesquisarContato.Size = new Size(171, 23);
             cmbPesquisarContato.TabIndex = 46;
+            cmbPesquisarContato.SelectedIndexChanged += cmbPesquisarContato_SelectedIndexChanged;
             // 
             // label17
             // 
@@ -565,6 +567,8 @@
             // 
             // Contato
             // 
+            Contato.Controls.Add(txtId);
+            Contato.Controls.Add(txtIdContato);
             Contato.Controls.Add(cmbContatoPara);
             Contato.Controls.Add(cmbTipoContato);
             Contato.Controls.Add(BtnDeleteContato);
@@ -579,6 +583,14 @@
             Contato.TabIndex = 70;
             Contato.TabStop = false;
             Contato.Text = "Contatos";
+            // 
+            // txtIdContato
+            // 
+            txtIdContato.Location = new Point(66, 210);
+            txtIdContato.Name = "txtIdContato";
+            txtIdContato.Size = new Size(20, 23);
+            txtIdContato.TabIndex = 81;
+            txtIdContato.Visible = false;
             // 
             // cmbContatoPara
             // 
@@ -664,6 +676,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             // 
+            // txtBairro
+            // 
+            txtBairro.Location = new Point(435, 161);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(110, 23);
+            txtBairro.TabIndex = 83;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(433, 143);
+            label29.Name = "label29";
+            label29.Size = new Size(41, 15);
+            label29.TabIndex = 82;
+            label29.Text = "Bairro:";
+            // 
             // txtCep
             // 
             txtCep.Location = new Point(20, 161);
@@ -736,34 +764,18 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(12, -1);
+            txtId.Location = new Point(20, 210);
             txtId.Name = "txtId";
-            txtId.Size = new Size(100, 23);
+            txtId.Size = new Size(28, 23);
             txtId.TabIndex = 77;
             txtId.Visible = false;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(433, 143);
-            label29.Name = "label29";
-            label29.Size = new Size(41, 15);
-            label29.TabIndex = 82;
-            label29.Text = "Bairro:";
-            // 
-            // txtBairro
-            // 
-            txtBairro.Location = new Point(435, 161);
-            txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(110, 23);
-            txtBairro.TabIndex = 83;
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 526);
-            Controls.Add(txtId);
             Controls.Add(BtnExcluir);
             Controls.Add(BtnAtualizar);
             Controls.Add(BtnCadastrar);
@@ -819,6 +831,7 @@
             FormClosing += ClientesForm_FormClosing;
             Load += ClientesForm_Load;
             Contato.ResumeLayout(false);
+            Contato.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -897,5 +910,6 @@
         private MaskedTextBox txtCep;
         private TextBox txtBairro;
         private Label label29;
+        private TextBox txtIdContato;
     }
 }

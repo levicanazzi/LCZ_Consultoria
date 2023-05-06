@@ -39,7 +39,7 @@ namespace LCZ
             InitializeComponent();
 
             CarregarComboBox();
-            CompletarCampos(cliente);
+            CompletarCamposCliente(cliente);
         }
 
         private void ClientesForm_Load(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace LCZ
             cliente.Uf = txtUf.Text;
 
             _clienteRepo.Save();
-            CompletarCampos(cliente);
+            CompletarCamposCliente(cliente);
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
@@ -188,11 +188,11 @@ namespace LCZ
             }
         }
 
-        private void CompletarCampos(Cliente cliente)
+        private void CompletarCamposCliente(Cliente cliente)
         {
             if (cliente != null)
             {
-                txtId.Text = (cliente.Id).ToString();
+                txtId.Text = cliente.Id.ToString();
                 txtSite.Text = cliente.Site;
                 txtTelefone.Text = cliente.Telefone;
                 txtEmailCliente.Text = cliente.EmailCliente;
@@ -208,6 +208,24 @@ namespace LCZ
                 txtComplemento.Text = cliente.Complemento;
                 txtCidade.Text = cliente.Cidade;
                 txtUf.Text = cliente.Uf;
+            }
+        }
+
+        private void CompletarCamposContatoCliente(ContatoCliente contatoCliente)
+        {
+            if (contatoCliente != null)
+            {
+                txtNomeContato.Text = contatoCliente.Nome;
+                txtCargo.Text = contatoCliente.Cargo;
+                cmbSexo.Text = contatoCliente.Sexo.ToString();
+                txtAniversario.Text = contatoCliente.Aniversario.ToString();
+                txtDepartamento.Text = contatoCliente.Departamento;
+                txtCelular1.Text = contatoCliente.Celular1;
+                txtCelular2.Text = contatoCliente.Celular2;
+                txtWhatsapp.Text = contatoCliente.Whatsapp;
+                txtEmail.Text = contatoCliente.Email;
+                cmbTipoContato.Text = contatoCliente.TipoContato.ToString();
+                cmbContatoPara.Text = contatoCliente.ContatoPara.ToString();
             }
         }
 
@@ -350,6 +368,45 @@ namespace LCZ
             if (e.KeyCode == Keys.Enter)
             {
                 BuscarCnpj(txtCnpj.Text);
+            }
+        }
+
+        private void cmbPesquisarContato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtIdContato.Text = cmbPesquisarContato.SelectedValue.ToString();
+            var idContato = int.Parse(txtIdContato.Text);
+            var contatoCliente = _contatoClienteRepo.FirstOrDefault(x => x.Id == idContato);
+
+            if (cmbPesquisarContato.SelectedValue is not null)
+            {
+                CompletarCamposContatoCliente(contatoCliente);
+            }
+        }
+
+        private void CarregarContatos()
+        {
+            var idCliente = int.Parse(txtId.Text);
+
+            var contatoCliente = _contatoClienteRepo.GetAll(x => x.IdCliente == idCliente);
+                        
+            var bindingSource = new BindingSource();
+            bindingSource.DataSource = contatoCliente;
+
+            cmbPesquisarContato.SelectedIndexChanged -= new EventHandler(cmbPesquisarContato_SelectedIndexChanged);
+
+            cmbPesquisarContato.DataSource = bindingSource.DataSource;
+            cmbPesquisarContato.DisplayMember = "Nome";
+            cmbPesquisarContato.ValueMember = "Id";
+            cmbPesquisarContato.SelectedIndex = -1;
+
+            cmbPesquisarContato.SelectedIndexChanged += new EventHandler(cmbPesquisarContato_SelectedIndexChanged);
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtId.Text is not null)
+            {
+                CarregarContatos();
             }
         }
     }
